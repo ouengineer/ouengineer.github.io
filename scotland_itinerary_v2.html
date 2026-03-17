@@ -1,0 +1,2446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wild Scotland — April 2025 Itinerary</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════
+   TOKENS — High contrast, mobile-first
+═══════════════════════════════════════════ */
+:root {
+  --white:      #ffffff;
+  --bg:         #f7f8f9;
+  --surface:    #ffffff;
+  --border:     #d4d8dd;
+  --border-med: #b8bdc4;
+
+  --text-1:     #0d1117;   /* headings   — very dark */
+  --text-2:     #2d3540;   /* body       */
+  --text-3:     #4a5568;   /* secondary  */
+  --text-4:     #6b7a8d;   /* captions   */
+
+  --forest:     #1a4d3a;   /* primary brand — Scotland green */
+  --forest-mid: #256347;
+  --forest-pale:#e6f2ed;
+
+  --amber:      #b35c00;   /* warm accent */
+  --amber-mid:  #d4720a;
+  --amber-pale: #fff0dd;
+  --amber-bg:   #fdf3e7;
+
+  --gold:       #a07828;
+
+  --red:        #c0392b;
+  --red-pale:   #fdf0ef;
+
+  --teal:       #0d7377;
+  --teal-pale:  #e6f5f5;
+
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md:  0 4px 12px rgba(0,0,0,0.10), 0 2px 4px rgba(0,0,0,0.06);
+  --shadow-lg:  0 8px 24px rgba(0,0,0,0.12);
+
+  --radius-sm:  6px;
+  --radius-md:  10px;
+  --radius-lg:  16px;
+
+  --max-w: 1060px;
+  --pad-x: 20px;
+}
+
+/* ═══ RESET ═══ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text-2);
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+/* ═══ UTILITY ═══ */
+.label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-4);
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.chip-urgent   { background: #fee2e2; color: #991b1b; }
+.chip-star     { background: #fef3c7; color: #92400e; }
+.chip-book     { background: #fee2e2; color: #991b1b; }
+.chip-wildlife { background: var(--teal-pale); color: var(--teal); }
+.chip-secret   { background: var(--forest-pale); color: var(--forest); }
+
+/* ═══ COVER ═══ */
+.cover {
+  background: var(--forest);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px var(--pad-x) 80px;
+  position: relative;
+  overflow: hidden;
+}
+.cover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 30%, rgba(201,168,76,0.12), transparent 65%),
+    radial-gradient(ellipse 100% 60% at 50% 100%, rgba(0,0,0,0.3), transparent 70%);
+  pointer-events: none;
+}
+.cover-content { position: relative; z-index: 1; max-width: 700px; }
+.cover-eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #a3c9b4;
+  margin-bottom: 20px;
+}
+.cover h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(48px, 9vw, 88px);
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.0;
+  margin-bottom: 12px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+.cover h1 em { font-style: italic; color: #f4c86a; }
+.cover-sub {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: clamp(17px, 3vw, 22px);
+  color: rgba(255,255,255,0.85);
+  margin: 14px 0 32px;
+}
+.cover-dates {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 36px;
+  letter-spacing: 0.05em;
+}
+.cover-themes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.cover-themes span {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.9);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 20px;
+  letter-spacing: 0.04em;
+}
+.cover-scroll {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.06em;
+  z-index: 1;
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%,100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(5px); }
+}
+
+/* ═══ NAV ═══ */
+.nav-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: var(--forest);
+  border-bottom: 3px solid #f4c86a;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+}
+.nav-label-bar {
+  background: rgba(0,0,0,0.25);
+  text-align: center;
+  padding: 5px var(--pad-x);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #a3c9b4;
+}
+.nav-scroll {
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.nav-scroll::-webkit-scrollbar { display: none; }
+.nav-inner {
+  display: flex;
+  min-width: max-content;
+  padding: 0 12px;
+  gap: 2px;
+}
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  padding: 10px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.7);
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -3px;
+  transition: color 0.15s, border-color 0.15s;
+  cursor: pointer;
+}
+.nav-link .nav-day-num {
+  font-size: 10px;
+  font-weight: 700;
+  color: #f4c86a;
+  letter-spacing: 0.04em;
+}
+.nav-link:hover {
+  color: #ffffff;
+  border-bottom-color: rgba(244,200,106,0.6);
+  background: rgba(255,255,255,0.06);
+}
+.nav-divider {
+  width: 1px;
+  background: rgba(255,255,255,0.12);
+  margin: 8px 4px;
+  align-self: stretch;
+}
+
+/* ═══ OVERVIEW STRIP ═══ */
+.overview {
+  background: var(--forest);
+  padding: 28px var(--pad-x);
+}
+.overview-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.1);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+@media (min-width: 640px) {
+  .overview-inner { grid-template-columns: repeat(6, 1fr); }
+}
+.ov-item {
+  background: rgba(255,255,255,0.06);
+  padding: 16px 12px;
+  text-align: center;
+}
+.ov-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #a3c9b4;
+  margin-bottom: 5px;
+}
+.ov-value {
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* ═══ PAGE BODY ═══ */
+.page-body {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+}
+
+/* ═══ DAY SECTION ═══ */
+.day-section {
+  padding-top: 40px;
+  padding-bottom: 8px;
+  scroll-margin-top: 80px;
+}
+.day-section + .day-section {
+  border-top: 2px solid var(--border);
+  margin-top: 16px;
+}
+
+/* Day Header */
+.day-header {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px 24px 20px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-sm);
+}
+.day-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.day-num-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--forest-mid);
+  margin-bottom: 6px;
+}
+.day-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(22px, 5vw, 32px);
+  font-weight: 900;
+  color: var(--text-1);
+  line-height: 1.15;
+}
+.day-title em { font-style: italic; color: var(--amber-mid); }
+.day-meta {
+  font-size: 13px;
+  color: var(--text-3);
+  margin-top: 5px;
+}
+.day-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+.badge {
+  background: var(--forest-pale);
+  border: 1px solid #b3d4c5;
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  text-align: center;
+}
+.badge-label {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--forest-mid);
+  display: block;
+}
+.badge-value {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--forest);
+  display: block;
+  line-height: 1.2;
+}
+.badge-sub {
+  font-size: 10px;
+  color: var(--text-3);
+  display: block;
+}
+
+/* Justification */
+.justification {
+  background: var(--forest);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  margin-top: 16px;
+  border-left: 4px solid #f4c86a;
+}
+.justification-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #a3c9b4;
+  margin-bottom: 7px;
+}
+.justification p {
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.7;
+  font-style: italic;
+}
+
+/* ═══ CONTENT LAYOUT ═══ */
+.day-body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 820px) {
+  .day-body { grid-template-columns: 1fr 320px; }
+}
+
+/* ═══ TIME BLOCKS ═══ */
+.time-block {
+  margin-bottom: 6px;
+}
+.time-block-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 0 8px;
+  border-bottom: 2px solid var(--border);
+  margin-bottom: 12px;
+}
+.time-icon { font-size: 18px; line-height: 1; }
+.time-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-1);
+}
+
+/* ═══ EXPERIENCE CARD ═══ */
+.exp-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  margin-bottom: 10px;
+  box-shadow: var(--shadow-sm);
+}
+.exp-card:last-child { margin-bottom: 0; }
+.exp-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+.exp-name {
+  font-family: 'Fraunces', serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-1);
+  margin-bottom: 3px;
+  line-height: 1.25;
+}
+.exp-sub {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-3);
+  margin-bottom: 8px;
+}
+.exp-desc {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.65;
+}
+.exp-tip {
+  font-size: 13px;
+  font-style: italic;
+  color: var(--text-3);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
+
+/* ═══ FOOD CARD ═══ */
+.food-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 10px;
+  box-shadow: var(--shadow-sm);
+}
+.food-card:last-child { margin-bottom: 0; }
+.food-card-header {
+  padding: 10px 16px 0;
+}
+.food-type {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.food-type-breakfast { color: #b45309; }
+.food-type-lunch     { color: #1d6b46; }
+.food-type-dinner    { color: #6b21a8; }
+.food-type-dessert   { color: #be185d; }
+.food-type-backup    { color: var(--text-4); }
+
+.food-card-body { padding: 0 16px 14px; }
+.food-name {
+  font-family: 'Fraunces', serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-1);
+  margin-bottom: 2px;
+  line-height: 1.25;
+}
+.food-location {
+  font-size: 12px;
+  color: var(--text-4);
+  margin-bottom: 10px;
+  font-style: italic;
+}
+.food-desc {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.65;
+}
+.dishes-block {
+  background: var(--amber-bg);
+  border-top: 1px solid #f0d5a8;
+  padding: 10px 16px;
+}
+.dishes-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 5px;
+}
+.dishes {
+  font-size: 13.5px;
+  color: #5a3800;
+  line-height: 1.6;
+}
+.food-warning {
+  background: var(--red-pale);
+  border-top: 1px solid #fca5a5;
+  padding: 8px 16px;
+  font-size: 12.5px;
+  color: var(--red);
+  font-weight: 500;
+}
+.food-warning::before { content: '⚠ '; }
+
+/* ═══ SIDEBAR CARDS ═══ */
+.sidebar { display: flex; flex-direction: column; gap: 16px; }
+
+.whisky-card {
+  background: #1a1a2e;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+.whisky-card-top {
+  padding: 16px 18px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.whisky-card-icon { font-size: 20px; }
+.whisky-card-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #f4c86a;
+}
+.whisky-card-body { padding: 14px 18px; }
+.whisky-card-body p {
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.65;
+}
+.whisky-dram {
+  background: rgba(244,200,106,0.1);
+  border-left: 3px solid #f4c86a;
+  border-radius: 0 4px 4px 0;
+  padding: 10px 14px;
+  margin-top: 12px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.88);
+  font-style: italic;
+  line-height: 1.6;
+}
+.whisky-dram strong { color: #f4c86a; font-style: normal; display: block; margin-bottom: 3px; }
+
+.wildlife-card {
+  background: var(--surface);
+  border: 2px solid #b3d4c5;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.wildlife-card-top {
+  background: var(--forest-pale);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid #b3d4c5;
+}
+.wildlife-card-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--forest);
+}
+.wildlife-card-body { padding: 14px 16px; }
+.wildlife-card-body p {
+  font-size: 13.5px;
+  color: var(--text-2);
+  line-height: 1.65;
+}
+.wildlife-highlight {
+  background: var(--forest);
+  color: #f4c86a;
+  border-radius: var(--radius-sm);
+  padding: 9px 12px;
+  font-size: 12.5px;
+  font-style: italic;
+  margin-top: 10px;
+  line-height: 1.55;
+}
+
+/* ═══ SECRETS SECTION ═══ */
+.secrets-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin: 20px 0 40px;
+  box-shadow: var(--shadow-sm);
+}
+.secrets-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--forest-pale);
+}
+.secrets-header-icon { font-size: 22px; }
+.secrets-header-text {}
+.secrets-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--forest);
+  margin-bottom: 2px;
+}
+.secrets-sub {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--text-3);
+}
+.secret-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+@media (min-width: 600px) {
+  .secret-grid { grid-template-columns: 1fr 1fr; }
+}
+.secret-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.secret-num {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  background: var(--forest-pale);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fraunces', serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--forest);
+  margin-top: 2px;
+}
+.secret-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-1);
+  margin-bottom: 3px;
+}
+.secret-desc {
+  font-size: 13px;
+  color: var(--text-3);
+  line-height: 1.6;
+}
+
+/* ═══ BOOKING SECTION ═══ */
+#bookings {
+  scroll-margin-top: 80px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px var(--pad-x);
+  margin: 40px 0;
+  box-shadow: var(--shadow-md);
+}
+.booking-section-title {
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--text-1);
+  margin-bottom: 8px;
+}
+.booking-section-sub {
+  font-size: 14px;
+  color: var(--text-3);
+  margin-bottom: 28px;
+}
+.booking-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media (min-width: 640px) {
+  .booking-grid { grid-template-columns: 1fr 1fr; }
+}
+.booking-category {}
+.booking-cat-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--forest);
+  border-bottom: 2px solid var(--forest-pale);
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+}
+.booking-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--bg);
+  font-size: 13.5px;
+}
+.booking-item:last-child { border-bottom: none; }
+.b-name { color: var(--text-2); font-weight: 500; }
+.b-date { color: var(--text-4); font-size: 12px; white-space: nowrap; }
+.urgent-flag {
+  display: inline-block;
+  background: #fee2e2;
+  color: #991b1b;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 2px 6px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+/* ═══ DRIVING SECTION ═══ */
+#driving {
+  scroll-margin-top: 80px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px var(--pad-x);
+  margin: 0 0 60px;
+  box-shadow: var(--shadow-sm);
+  overflow-x: auto;
+}
+.driving-section-title {
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--text-1);
+  margin-bottom: 24px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  min-width: 500px;
+}
+thead th {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-1);
+  background: var(--bg);
+  border-bottom: 2px solid var(--border-med);
+  padding: 10px 14px;
+  text-align: left;
+}
+tbody td {
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  color: var(--text-2);
+}
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:hover td { background: var(--bg); }
+
+.issues-block {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-left: 4px solid #ea580c;
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  margin-top: 24px;
+}
+.issues-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #9a3412;
+  margin-bottom: 10px;
+}
+.issues-block p {
+  font-size: 13.5px;
+  color: #431407;
+  line-height: 1.8;
+}
+
+/* ═══ FOOTER ═══ */
+footer {
+  background: var(--forest);
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+  padding: 28px var(--pad-x);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+/* ═══ PRINT ═══ */
+@media print {
+  .nav-wrapper, .cover-scroll { display: none; }
+  .day-section { page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<section class="cover">
+  <div class="cover-content">
+    <div class="cover-eyebrow">A Private Itinerary · April 2025</div>
+    <h1>Wild <em>Scotland</em></h1>
+    <p class="cover-sub">Seven days of food, drama, wilderness &amp; dram</p>
+    <div class="cover-dates">18 — 24 April 2025 &nbsp;·&nbsp; Glencoe &nbsp;·&nbsp; Skye &nbsp;·&nbsp; Gleneagles &nbsp;·&nbsp; Edinburgh</div>
+    <div class="cover-themes">
+      <span>🍽 Foodie</span>
+      <span>✨ Luxury</span>
+      <span>⛰ Dramatic Views</span>
+      <span>🦦 Wildlife</span>
+    </div>
+  </div>
+  <div class="cover-scroll">Scroll to begin ↓</div>
+</section>
+
+<!-- NAVIGATION -->
+<div class="nav-wrapper">
+  <div class="nav-label-bar">JUMP TO DAY</div>
+  <div class="nav-scroll">
+    <div class="nav-inner">
+      <a class="nav-link" href="#day1"><span class="nav-day-num">DAY 1</span>Glencoe</a>
+      <a class="nav-link" href="#day2"><span class="nav-day-num">DAY 2</span>Skye I</a>
+      <a class="nav-link" href="#day3"><span class="nav-day-num">DAY 3</span>Skye II</a>
+      <a class="nav-link" href="#day4"><span class="nav-day-num">DAY 4</span>Oban</a>
+      <a class="nav-link" href="#day5"><span class="nav-day-num">DAY 5</span>Gleneagles</a>
+      <a class="nav-link" href="#day6"><span class="nav-day-num">DAY 6</span>Edinburgh</a>
+      <a class="nav-link" href="#day7"><span class="nav-day-num">DAY 7</span>Departure</a>
+      <div class="nav-divider"></div>
+      <a class="nav-link" href="#bookings"><span class="nav-day-num">📋</span>Bookings</a>
+      <a class="nav-link" href="#driving"><span class="nav-day-num">🗺</span>Drives</a>
+    </div>
+  </div>
+</div>
+
+<!-- OVERVIEW STRIP -->
+<div class="overview">
+  <div class="overview-inner">
+    <div class="ov-item"><div class="ov-label">Hotels</div><div class="ov-value">5 properties</div></div>
+    <div class="ov-item"><div class="ov-label">Driving</div><div class="ov-value">~730 mi</div></div>
+    <div class="ov-item"><div class="ov-label">Michelin ★</div><div class="ov-value">3 starred</div></div>
+    <div class="ov-item"><div class="ov-label">Distilleries</div><div class="ov-value">4 visited</div></div>
+    <div class="ov-item"><div class="ov-label">Wildlife</div><div class="ov-value">Otter · Puffin</div></div>
+    <div class="ov-item"><div class="ov-label">Drams</div><div class="ov-value">10+ curated</div></div>
+  </div>
+</div>
+
+<!-- PAGE BODY -->
+<div class="page-body">
+
+<!-- ═══════════════ DAY 1 ═══════════════ -->
+<div class="day-section" id="day1">
+  <div class="day-header">
+    <div class="day-top">
+      <div>
+        <div class="day-num-label">Day One · Friday 18 April</div>
+        <h2 class="day-title">Edinburgh <em>→</em> Glencoe</h2>
+        <p class="day-meta">Arrive EDI noon · Depart ~1pm · Arrive Glencoe ~4–5pm</p>
+      </div>
+      <div class="day-badges">
+        <div class="badge">
+          <span class="badge-label">Drive</span>
+          <span class="badge-value">2h 45m</span>
+          <span class="badge-sub">~3h 45m w/ stops</span>
+        </div>
+        <div class="badge">
+          <span class="badge-label">Route</span>
+          <span class="badge-value">A82 N</span>
+          <span class="badge-sub">via Loch Lomond</span>
+        </div>
+      </div>
+    </div>
+    <div class="justification">
+      <div class="justification-label">Why this beats the tourist trail</div>
+      <p>Every standard Scotland itinerary wastes the first evening in an Edinburgh hotel, jet-lagged in a city you can visit last. This plan uses the landing window to drive one of Britain's most dramatic roads — the A82 through Loch Lomond and Rannoch Moor — so the scenery builds like a film crescendo. You sleep in Glencoe itself, waking tomorrow inside the valley most tourists only see through a coach window. Jet-lag works in your favour: you'll fall asleep early, be up at dawn, and see the mist on the Three Sisters before anyone else arrives.</p>
+    </div>
+  </div>
+
+  <div class="day-body">
+    <div class="main-col">
+
+      <div class="time-block">
+        <div class="time-block-header">
+          <span class="time-icon">🚗</span>
+          <span class="time-title">Afternoon — Drive North via Loch Lomond</span>
+        </div>
+
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-lunch">🍺 Lunch Stop · En Route (~2:30pm)</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">The Drovers Inn</div>
+            <div class="food-location">Inverarnan, head of Loch Lomond · ~1h 30m from EDI · est. 1705</div>
+            <p class="food-desc">One of Scotland's most magnificently unhinged old coaching inns — low beams, open fires, stuffed bears and foxes in every corner, a barman who looks like he's been there since the Jacobite Rising. This is your first proper Scottish meal and it will set the tone perfectly.</p>
+          </div>
+          <div class="dishes-block">
+            <div class="dishes-label">Order These</div>
+            <div class="dishes">Cullen Skink (smoked haddock chowder) · Venison stew with oatmeal dumplings · Smoked salmon on potato scone · A pint of 70/- (Scottish ale)</div>
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-name">The Drive: A82 through Rannoch Moor</div>
+          <div class="exp-sub">~2h 45m total — scenery escalates dramatically through the journey</div>
+          <p class="exp-desc">The A82 begins gently along Loch Lomond, then climbs through the vast emptiness of Rannoch Moor — one of the most desolate plateaux in Europe. The road narrows and the sky widens. Mountains appear. By the time you enter the Glencoe pass, with the Three Sisters closing in on either side, you'll understand exactly what Scotland is.</p>
+        </div>
+      </div>
+
+      <div class="time-block">
+        <div class="time-block-header">
+          <span class="time-icon">🏔</span>
+          <span class="time-title">Late Afternoon — Glencoe Valley</span>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-chips"><span class="chip chip-secret">🔍 Local Secret</span></div>
+          <div class="exp-name">Three Sisters Viewpoint</div>
+          <div class="exp-sub">Roadside layby on A82 as you enter the valley</div>
+          <p class="exp-desc">Pull into the large layby on the right as you enter the valley. In April evening light the ridge turns amber and violet against a darkening sky. Ten minutes. One photograph. Immediately justifies the entire trip.</p>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-chips"><span class="chip chip-secret">🔍 Local Secret</span></div>
+          <div class="exp-name">Glencoe Lochan Walk</div>
+          <div class="exp-sub">30-min walk from hotel · before dinner</div>
+          <p class="exp-desc">A circular forest of North American conifers planted by a Canadian homesick wife of Lord Strathcona in the 1890s. The loch is mirror-still in the evening, the trees incongruously beautiful, the path almost always empty. Resets the nervous system after a travel day.</p>
+        </div>
+      </div>
+
+      <div class="time-block">
+        <div class="time-block-header">
+          <span class="time-icon">🌙</span>
+          <span class="time-title">Evening — Dinner &amp; Drams</span>
+        </div>
+
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-dinner">🍽 Dinner (Primary)</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">Clachaig Inn — The Bidean Restaurant</div>
+            <div class="food-location">Glencoe Valley · Spiritual home of Scottish hill-walking</div>
+            <p class="food-desc">The Bidean is the formal dining room of the Clachaig Inn — proper, cosy, full of character. The Boots Bar next door (different door, same building) has 300+ single malts. Do both: dinner in the Bidean, drams in the Boots Bar.</p>
+          </div>
+          <div class="dishes-block">
+            <div class="dishes-label">Order These</div>
+            <div class="dishes">Haggis, neeps &amp; tatties (traditional, essential on Day 1) · Glencoe venison casserole with rowan jelly · Pan-fried Mallaig hake · Scottish lamb shank · Cranachan for dessert (whipped cream, toasted oats, whisky, raspberries)</div>
+          </div>
+          <div class="food-warning">Book ahead. Ask for a table in the main room, not the function area.</div>
+        </div>
+
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-dessert">🍮 Dessert</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">Cranachan — Clachaig Inn</div>
+            <p class="food-desc">Scotland's finest traditional pudding: whipped cream folded with toasted oatmeal, a generous pour of single malt, heather honey, and fresh raspberries. Scotland in a bowl.</p>
+          </div>
+        </div>
+
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-backup">🍽 Dinner (Backup)</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">Glencoe House Hotel Restaurant</div>
+            <div class="food-location">If staying at Glencoe House rather than Clachaig Inn</div>
+            <p class="food-desc">The former Victorian shooting lodge has a more formal dining room — locally sourced Scottish produce, good wine list, beautiful old house atmosphere.</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /main-col -->
+
+    <div class="sidebar">
+      <div class="whisky-card">
+        <div class="whisky-card-top">
+          <span class="whisky-card-icon">🥃</span>
+          <span class="whisky-card-title">Whisky Thread · Day 1</span>
+        </div>
+        <div class="whisky-card-body">
+          <p>The Boots Bar at Clachaig Inn is one of Scotland's whisky secrets — 300+ malts in a climbers' pub, pub prices, zero pretension. The staff are passionate and will talk you through everything.</p>
+          <div class="whisky-dram">
+            <strong>Tonight's Dram</strong>
+            Ask for Ben Nevis 10-Year-Old — the Fort William distillery is only 12 miles away. Rich, fruity, and Highland in character. Tell the barman where you've come from; let them choose the second dram.
+          </div>
+        </div>
+      </div>
+
+      <div class="wildlife-card">
+        <div class="wildlife-card-top">
+          <span style="font-size:18px">🦌</span>
+          <span class="wildlife-card-title">Wildlife · Glencoe</span>
+        </div>
+        <div class="wildlife-card-body">
+          <p>Glencoe is prime red deer territory. Herds are visible on the valley floor and upper moorland at dawn and dusk. Golden eagles patrol the Bidean nam Bian ridge — scan the skyline with patience. Red kites reintroduced to the area are increasingly visible.</p>
+          <div class="wildlife-highlight">April is late rutting season — stags may still be visible on the high ridges in the evening light.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="secrets-section">
+    <div class="secrets-header">
+      <span class="secrets-header-icon">🔍</span>
+      <div class="secrets-header-text">
+        <div class="secrets-title">5 Things Locals Love · Tourists Miss</div>
+        <div class="secrets-sub">Glencoe &amp; the Road North</div>
+      </div>
+    </div>
+    <div class="secret-grid">
+      <div class="secret-item"><div class="secret-num">1</div><div><div class="secret-name">The Lost Valley (Coire Gabhail)</div><p class="secret-desc">A hidden glacial valley completely invisible from the road, tucked between two of the Three Sisters. A 2-mile walk reveals a secret flat meadow where the MacDonalds hid stolen cattle before the 1692 massacre. Almost no tourist finds this.</p></div></div>
+      <div class="secret-item"><div class="secret-num">2</div><div><div class="secret-name">Signal Rock, Glencoe Village</div><p class="secret-desc">A flat-topped rock in the woodland near Glencoe village — where legend holds the signal fire was lit before the 1692 massacre. A short forest walk from the village. Barely signposted, rarely visited, genuinely atmospheric.</p></div></div>
+      <div class="secret-item"><div class="secret-num">3</div><div><div class="secret-name">Loch Achtriochtan at Dusk</div><p class="secret-desc">A small loch on the valley floor, passed by almost every visitor without stopping. Park at the layby near the Study viewpoint and walk to the loch shore for an undisturbed mirror reflection of the Three Sisters. April dusk light is extraordinary here.</p></div></div>
+      <div class="secret-item"><div class="secret-num">4</div><div><div class="secret-name">The Boots Bar (Not the Restaurant)</div><p class="secret-desc">A completely different door from the restaurant. Memorabilia-covered walls, climbers drying kit by the fire, 300+ single malts, bar staff who've read every whisky book ever printed. Go here after dinner. Unrepeatable.</p></div></div>
+      <div class="secret-item"><div class="secret-num">5</div><div><div class="secret-name">Glencoe Lochan — The Canadian Forest</div><p class="secret-desc">Lord Strathcona planted North American trees in the 1890s for his homesick Canadian wife. The result: a magical incongruity of Douglas fir and larch that looks completely unlike Scotland. Peaceful, almost always empty.</p></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ DAY 2 ═══════════════ -->
+<div class="day-section" id="day2">
+  <div class="day-header">
+    <div class="day-top">
+      <div>
+        <div class="day-num-label">Day Two · Saturday 19 April</div>
+        <h2 class="day-title">Glencoe <em>→</em> Colbost, Skye</h2>
+        <p class="day-meta">Depart 8:30am sharp · Glenfinnan · Fort William · Eilean Donan · Arrive Colbost ~2:30pm · Three Chimneys dinner</p>
+      </div>
+      <div class="day-badges">
+        <div class="badge">
+          <span class="badge-label">Drive</span>
+          <span class="badge-value">4h 15m</span>
+          <span class="badge-sub">~7h elapsed</span>
+        </div>
+        <div class="badge">
+          <span class="badge-label">Route</span>
+          <span class="badge-value">A82→A87</span>
+          <span class="badge-sub">→A850 Skye</span>
+        </div>
+      </div>
+    </div>
+    <div class="justification">
+      <div class="justification-label">Why this beats the tourist trail</div>
+      <p>The standard tourist flies to Inverness and coaches directly to Skye, seeing an A9 service station. This route connects the dots of Scottish romanticism in a single day — Glencoe to Glenfinnan to Eilean Donan to Skye. The timing is precision-engineered: Glenfinnan before the coach tours arrive, Eilean Donan in warm afternoon light, and Three Chimneys at the end to reward the drive. No day this week asks more of you — none delivers more either.</p>
+    </div>
+  </div>
+
+  <div class="day-body">
+    <div class="main-col">
+
+      <div class="time-block">
+        <div class="time-block-header">
+          <span class="time-icon">🌅</span>
+          <span class="time-title">8:00am — Breakfast &amp; Depart</span>
+        </div>
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-breakfast">☕ Breakfast · 8:00am</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">Clachaig Inn — Full Scottish</div>
+            <div class="food-location">Depart by 8:30am sharp</div>
+            <p class="food-desc">The full Scottish is a religious experience when done properly. Clachaig's version uses Lochaber produce — the black pudding from a local butcher, potato scones made in-house. This is the fuel for Scotland's greatest drive. Eat everything.</p>
+          </div>
+          <div class="dishes-block">
+            <div class="dishes-label">Order These</div>
+            <div class="dishes">Lorne sausage (the square one — order it) · Black pudding · Smoked back bacon · Potato scone (essential) · Fried egg · Strong coffee</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="time-block">
+        <div class="time-block-header">
+          <span class="time-icon">🏔</span>
+          <span class="time-title">9:45am — Glenfinnan</span>
+        </div>
+        <div class="exp-card">
+          <div class="exp-chips"><span class="chip chip-star">⭐ Don't Miss</span></div>
+          <div class="exp-name">Glenfinnan Viaduct &amp; Monument</div>
+          <div class="exp-sub">NTS Car Park, A830 · arrive 9:45am · allow 20 min</div>
+          <p class="exp-desc">Take the 10-min path to the HILLTOP VIEWPOINT (not the car park below) for the classic arched viaduct shot. Then walk to the loch shore monument — where Bonnie Prince Charlie raised his standard in 1745. The combination of monument, loch and encircling hills is arguably more moving than the viaduct.</p>
+          <p class="exp-tip">Arrive at 9:45am to beat coach tours which arrive from 10:15am.</p>
+        </div>
+      </div>
+
+      <div class="time-block">
+        <div class="time-block-header">
+          <span class="time-icon">☕</span>
+          <span class="time-title">10:25am — Fort William Coffee Stop</span>
+        </div>
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-breakfast">☕ Coffee Stop · 15 min only</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">The Bakehouse Café, Fort William</div>
+            <div class="food-location">High Street · last major fuel &amp; supplies before Skye</div>
+            <p class="food-desc">Fort William's locals' café. Excellent coffee and freshly baked pastries. 15 minutes, no more. Fill up on fuel here — it's significantly more expensive on Skye.</p>
+          </div>
+          <div class="dishes-block">
+            <div class="dishes-label">Order</div>
+            <div class="dishes">Double espresso or flat white · Buttermilk scone · Empire biscuit (Scottish glazed shortbread — a national institution)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="time-block">
+        <div class="time-block-header">
+          <span class="time-icon">👁</span>
+          <span class="time-title">12:30pm — Loch Duich</span>
+        </div>
+        <div class="exp-card">
+          <div class="exp-name">Five Sisters of Kintail — Viewpoint Layby</div>
+          <div class="exp-sub">A87 roadside layby · 10-min stop</div>
+          <p class="exp-desc">The Five Sisters ridge is visible across the loch from the A87. Pull in for 10 minutes. In April, snow frequently remains on upper ridges — the contrast of snowline and reflected loch is one of Scotland's defining views. Coaches drive straight past.</p>
+        </div>
+      </div>
+
+      <div class="time-block">
+        <div class="time-block-header">
+          <span class="time-icon">🏰</span>
+          <span class="time-title">12:45pm — Eilean Donan &amp; Dornie</span>
+        </div>
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-lunch">🥗 Lunch (Primary)</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">The Clachan Inn, Dornie</div>
+            <div class="food-location">Dornie village · 300m from Eilean Donan castle</div>
+            <p class="food-desc">While tourists queue for the castle café, this is where locals eat. A real village pub with genuinely good food — not fine dining but entirely unpretentious. Have lunch first, then visit the castle refreshed.</p>
+          </div>
+          <div class="dishes-block">
+            <div class="dishes-label">Order These</div>
+            <div class="dishes">Cullen Skink · Venison burger with cranberry sauce · Smoked salmon with brown bread and butter · A half of 80/-</div>
+          </div>
+          <div class="food-warning">Confirm April Saturday hours before visiting Eilean Donan: +44 1599 555202 (typically 10am–5pm).</div>
+        </div>
+
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-backup">🥗 Lunch (Backup)</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">Eilean Donan Castle Café</div>
+            <p class="food-desc">Hot soup and sandwiches inside the grounds. Fine as a fallback. The castle itself (45 min) is exceptional — walk the far shoreline path for the angle no postcard shows.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="time-block">
+        <div class="time-block-header">
+          <span class="time-icon">🌊</span>
+          <span class="time-title">2:30pm — Arrive Skye &amp; Settle In</span>
+        </div>
+        <div class="exp-card">
+          <div class="exp-chips"><span class="chip chip-secret">🔍 2 Min Stop</span></div>
+          <div class="exp-name">Skye Bridge Layby — Landward Side</div>
+          <div class="exp-sub">Pull into layby on LEFT immediately after crossing</div>
+          <p class="exp-desc">The back-view of the bridge across the sea lochs is completely different from the approach. Two minutes. Completely alone. Do it.</p>
+        </div>
+      </div>
+
+      <div class="time-block">
+        <div class="time-block-header">
+          <span class="time-icon">🌙</span>
+          <span class="time-title">Evening — Three Chimneys</span>
+        </div>
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-dinner">🍽 Dinner (Primary) ⭐ — Centrepiece of Day 2</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">The Three Chimneys, Colbost</div>
+            <div class="food-location">60 seconds from your hotel room · Request 7:30–8:00pm sitting</div>
+            <p class="food-desc">Since 1985, Three Chimneys has set the benchmark for what Scottish restaurant food can be. Chef Scott Davies uses ruthless localism — almost everything on the plate was in the sea or on the hill that morning.</p>
+          </div>
+          <div class="dishes-block">
+            <div class="dishes-label">Order These</div>
+            <div class="dishes">Skye crab with Isle of Mull cheese soufflé · Wild turbot or sea bass (whatever arrived that day) · Hebridean lamb with garden herbs · <strong>Hot Marmalade Pudding with Drambuie cream</strong> (the legendary dessert — non-negotiable) · Pre-dinner: Isle of Skye oysters if offered</div>
+          </div>
+          <div class="food-warning">Book months in advance. Request 7:30pm sitting explicitly when booking.</div>
+        </div>
+      </div>
+
+    </div><!-- /main-col -->
+
+    <div class="sidebar">
+      <div class="whisky-card">
+        <div class="whisky-card-top">
+          <span class="whisky-card-icon">🥃</span>
+          <span class="whisky-card-title">Whisky Thread · Day 2</span>
+        </div>
+        <div class="whisky-card-body">
+          <p>Three Chimneys has one of Scotland's finest curated whisky lists, focused on Skye and the islands. Ask the sommelier about a whisky pairing with your main course — not always on the standard menu but the team will accommodate it.</p>
+          <div class="whisky-dram">
+            <strong>Tonight's Dram</strong>
+            Ask for Torabhaig Legacy Series — Skye's second distillery (opened 2017), barely known outside the island. Compare it with a Talisker Storm as a paired flight. Two distilleries, one island, entirely different characters.
+          </div>
+        </div>
+      </div>
+
+      <div class="wildlife-card">
+        <div class="wildlife-card-top">
+          <span style="font-size:18px">🦅</span>
+          <span class="wildlife-card-title">Wildlife Watch</span>
+        </div>
+        <div class="wildlife-card-body">
+          <p>The Kintail ridge above Loch Duich is prime golden eagle territory — scan high ridges from the viewpoint layby. Along the A87 after Invergarry, look for red kites circling over woodland. The Skye Bridge crossing at low tide occasionally shows seals on the rocks below.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="secrets-section">
+    <div class="secrets-header">
+      <span class="secrets-header-icon">🔍</span>
+      <div class="secrets-header-text">
+        <div class="secrets-title">5 Things Locals Love · Tourists Miss</div>
+        <div class="secrets-sub">The Great Drive: Glencoe to Skye</div>
+      </div>
+    </div>
+    <div class="secret-grid">
+      <div class="secret-item"><div class="secret-num">1</div><div><div class="secret-name">Commando Memorial, Spean Bridge</div><p class="secret-desc">8 miles north of Fort William on the A82 — a bronze memorial to WWII commandos trained in these mountains, with Ben Nevis directly behind on clear days. Moving, isolated, almost never in tourist guides.</p></div></div>
+      <div class="secret-item"><div class="secret-num">2</div><div><div class="secret-name">The Walk to Glenfinnan Monument</div><p class="secret-desc">Everyone photographs the viaduct. Almost no one walks the 1km path down to the loch shore monument — always empty, the most emotionally charged view at Glenfinnan.</p></div></div>
+      <div class="secret-item"><div class="secret-num">3</div><div><div class="secret-name">Eilean Donan: The Back Path</div><p class="secret-desc">A footpath circles behind the castle along the far loch shore — a completely different view, almost always alone, showing the castle with mountains behind. No postcard shows this angle.</p></div></div>
+      <div class="secret-item"><div class="secret-num">4</div><div><div class="secret-name">Torabhaig Distillery (Day 3 preview)</div><p class="secret-desc">Scotland's newest single malt distillery — 5 minutes off your route south on Day 3. A converted 19th-century farmstead, no tour buses, extraordinary whisky. Mark it for tomorrow.</p></div></div>
+      <div class="secret-item"><div class="secret-num">5</div><div><div class="secret-name">Skye Bridge Layby (Landward Side)</div><p class="secret-desc">The tiny pull-off immediately after crossing onto Skye gives a back-view of the bridge across the sea lochs that the approach entirely misses. Two minutes. Completely empty. Do it.</p></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ DAY 3 ═══════════════ -->
+<div class="day-section" id="day3">
+  <div class="day-header">
+    <div class="day-top">
+      <div>
+        <div class="day-num-label">Day Three · Sunday 20 April</div>
+        <h2 class="day-title">Colbost <em>→</em> Kinloch Lodge, Sleat</h2>
+        <p class="day-meta">Puffins 7:45am · Talisker 10:30am · South Skye · Otter watch at dusk · Kinloch Lodge dinner</p>
+      </div>
+      <div class="day-badges">
+        <div class="badge">
+          <span class="badge-label">Drive</span>
+          <span class="badge-value">~2h</span>
+          <span class="badge-sub">~3h 30m elapsed</span>
+        </div>
+        <div class="badge">
+          <span class="badge-label">Route</span>
+          <span class="badge-value">B884→A863</span>
+          <span class="badge-sub">→A87→A851</span>
+        </div>
+      </div>
+    </div>
+    <div class="justification">
+      <div class="justification-label">Why this beats the tourist trail</div>
+      <p>Every Scotland coach tour goes north on Skye: Old Man of Storr, Kilt Rock, Portree. This plan goes south and west — to the island's emptiest and most beautiful quarters. The puffin colonies at Neist Point arrive in late April — you are here at exactly the right week. Talisker is visited in morning quiet before the day-trippers arrive. And the otter chances at Isle Ornsay at dusk are genuinely excellent. This is the day that justifies every booking.</p>
+    </div>
+  </div>
+
+  <div class="day-body">
+    <div class="main-col">
+
+      <div class="time-block">
+        <div class="time-block-header">
+          <span class="time-icon">🐦</span>
+          <span class="time-title">7:45am — Neist Point Puffin Watch</span>
+        </div>
+        <div class="exp-card">
+          <div class="exp-chips"><span class="chip chip-wildlife">🦦 Puffins</span><span class="chip chip-star">⭐ Late April = Arrival Week</span></div>
+          <div class="exp-name">Neist Point Lighthouse — Puffin Colony</div>
+          <div class="exp-sub">B884 West · 30 min from Colbost · depart 7:15am</div>
+          <p class="exp-desc">Drive to Neist Point lighthouse (30 min) by 7:45am. Walk the 1.5-mile path to the lighthouse. The sea cliffs SOUTH of the lighthouse are the nesting site — late April is their arrival week, when Atlantic puffins return from overwintering at sea. Look for birds flying in low from the west, perching on cliff edges. Fulmar, razorbill, and guillemot also likely.</p>
+          <p class="exp-tip">Approach the cliff edge slowly and low — puffins are easily spooked before they settle. Bring binoculars. Return to the House Over-By for 9:30am breakfast.</p>
+        </div>
+      </div>
+
+      <div class="time-block">
+        <div class="time-block-header">
+          <span class="time-icon">🍳</span>
+          <span class="time-title">9:30am — The Famous Breakfast</span>
+        </div>
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-breakfast">☕ Breakfast · The Main Event</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">The House Over-By Breakfast</div>
+            <div class="food-location">Colbost · Included with room</div>
+            <p class="food-desc">This breakfast is one of the reasons people book the House Over-By. Everything has provenance: black pudding from a Portree butcher, smoked salmon from the Isle of Skye Smokehouse, eggs from hens 300 metres away, porridge with Skye heather honey, bread baked this morning.</p>
+          </div>
+          <div class="dishes-block">
+            <div class="dishes-label">Order These</div>
+            <div class="dishes">Full Scottish with local black pudding and Stornoway lorne sausage · Smoked salmon with scrambled eggs on homemade sourdough · Porridge with heather honey and double cream · Freshly baked breads with Orkney butter</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="time-block">
+        <div class="time-block-header">
+          <span class="time-icon">🥃</span>
+          <span class="time-title">10:30am — Talisker Distillery</span>
+        </div>
+        <div class="exp-card">
+          <div class="exp-chips"><span class="chip chip-book">📋 Pre-booked 10:30am</span></div>
+          <div class="exp-name">Talisker Distillery, Carbost</div>
+          <div class="exp-sub">Loch Harport shore · pre-booked Classic Tour (45 min)</div>
+          <p class="exp-desc">The most dramatically sited distillery in Scotland — on the shore of Loch Harport with the Black Cuillins visible behind. Talisker has been here since 1830. The tasting room faces the loch.</p>
+          <p class="exp-tip">Taste: Talisker 10 · Talisker 18 (the revelation) · Talisker Storm. Ask about distillery-exclusive releases for purchase.</p>
+        </div>
+        <div class="exp-card">
+          <div class="exp-chips"><span class="chip chip-secret">🔍 Local Secret</span></div>
+          <div class="exp-name">⭐ Talisker Bay Beach</div>
+          <div class="exp-sub">20-min walk from distillery car park</div>
+          <p class="exp-desc">Black volcanic sand, dramatic basalt sea stacks, a waterfall tumbling directly onto the beach from the cliff above. Almost always completely empty. One of the most romantic beaches in Scotland and virtually nobody knows to walk here from the distillery. Allow 30 minutes — worth every step.</p>
+        </div>
+      </div>
+
+      <div class="time-block">
+        <div class="time-block-header">
+          <span class="time-icon">🦀</span>
+          <span class="time-title">1:00pm — Broadford Lunch</span>
+        </div>
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-lunch">🥗 Lunch (Primary) — NOTE: Oyster Shed CLOSED Sundays</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">Café Sia, Broadford</div>
+            <div class="food-location">Broadford village · on route south</div>
+            <p class="food-desc">Broadford's best café and the locals' lunchtime destination. Bright, unpretentious, excellent. The kitchen uses Skye produce with genuine care. Arrive before 12:30pm or you'll queue.</p>
+          </div>
+          <div class="dishes-block">
+            <div class="dishes-label">Order These</div>
+            <div class="dishes">Skye crab sandwich on toasted sourdough · Cullen Skink with oatcakes · Hebridean venison burger with local chutney · A slice of clootie dumpling (traditional Scottish spiced fruit cake)</div>
+          </div>
+        </div>
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-backup">🥗 Lunch (Backup)</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">The Creelers, Broadford</div>
+            <p class="food-desc">More formal seafood option in Broadford. West Coast langoustines, local crab, hand-dived scallops. Check Sunday opening.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="time-block">
+        <div class="time-block-header">
+          <span class="time-icon">🌿</span>
+          <span class="time-title">Afternoon — Sleat &amp; Torabhaig</span>
+        </div>
+        <div class="exp-card">
+          <div class="exp-chips"><span class="chip chip-star">⭐ Hidden Gem · 5 min detour</span></div>
+          <div class="exp-name">Torabhaig Distillery, Teangue</div>
+          <div class="exp-sub">A851 · 5 min off the route south</div>
+          <p class="exp-desc">Scotland's most exciting new single malt distillery — the first legal Skye whisky in 190 years (opened 2017). A converted 19th-century farm steading. No coach tours, no crowds, deeply personal. The Legacy Series is a peated malt unlike anything you'll have tasted. Buy a bottle.</p>
+        </div>
+        <div class="exp-card">
+          <div class="exp-name">Point of Sleat Walk or Armadale Castle</div>
+          <div class="exp-sub">4-mile round trip OR 45-min gardens visit</div>
+          <p class="exp-desc"><strong>Walk:</strong> Moorland path to the southernmost point of Skye with views to Rum, Eigg, and Muck. Rocky shore on east side = excellent otter habitat. Walk slowly, scan kelp beds. Allow 2–2.5 hours.<br><br><strong>Gardens:</strong> Armadale Castle with 40 acres of woodland gardens — bluebells begin in late April, the Museum of the Isles inside covers the Lords of the Isles (genuinely fascinating).</p>
+        </div>
+      </div>
+
+      <div class="time-block">
+        <div class="time-block-header">
+          <span class="time-icon">🌙</span>
+          <span class="time-title">Evening — Isle Ornsay &amp; Kinloch Lodge</span>
+        </div>
+        <div class="exp-card">
+          <div class="exp-chips"><span class="chip chip-wildlife">🦦 Otter Watch</span><span class="chip chip-star">⭐ Best Chance on Skye</span></div>
+          <div class="exp-name">Isle Ornsay Harbour — 1 Hour Before Dark</div>
+          <div class="exp-sub">15 min from Kinloch Lodge</div>
+          <p class="exp-desc">Walk slowly south along the shoreline past the Eilean Iarmain Hotel, scanning the kelp beds carefully. The tidal narrows around the small island in the harbour create excellent feeding habitat. Move quietly, avoid silhouetting yourself against the skyline. Evening light. Genuine chance of success.</p>
+        </div>
+        <div class="exp-card">
+          <div class="exp-chips"><span class="chip chip-secret">🔍 Only on Skye</span></div>
+          <div class="exp-name">Eilean Iarmain Hotel Bar</div>
+          <div class="exp-sub">Isle Ornsay · Scotland's most romantic Gaelic-speaking inn</div>
+          <p class="exp-desc">A 19th-century white inn on a tiny perfect harbour. Order a Té Bheag (see whisky card) and watch the seals on the rocks opposite. The bar is unhurried, warm, and unlike anywhere else in Scotland.</p>
+        </div>
+
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-dinner">🍽 Dinner (Primary) ⭐</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">Kinloch Lodge Restaurant</div>
+            <div class="food-location">Sleat, Skye · Pre-booked</div>
+            <p class="food-desc">Lady Claire Macdonald — one of Scotland's most celebrated food writers — and Lord and Lady Macdonald have made Kinloch Lodge a benchmark for Scottish country house dining. The kitchen uses the estate, the sea, and the island larder, often in the same dish.</p>
+          </div>
+          <div class="dishes-block">
+            <div class="dishes-label">Order These</div>
+            <div class="dishes">Kinloch smoked salmon (house smokehouse) · Local langoustines with garlic herb butter · Roast Highland lamb with rosemary and redcurrant jus · Estate venison · Kinloch sticky toffee pudding</div>
+          </div>
+        </div>
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-dessert">🍮 Dessert</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">Clootie Dumpling, if on the Kinloch Lodge menu</div>
+            <p class="food-desc">Scotland's most traditional dessert — a dense, spiced fruit pudding steamed in a cloth, served warm with custard. If Kinloch Lodge offers it, order it. Scottish heritage cooking at its finest.</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /main-col -->
+
+    <div class="sidebar">
+      <div class="whisky-card">
+        <div class="whisky-card-top">
+          <span class="whisky-card-icon">🥃</span>
+          <span class="whisky-card-title">Whisky Thread · Day 3</span>
+        </div>
+        <div class="whisky-card-body">
+          <p>The great Skye whisky double: Talisker (the famous) vs Torabhaig (the hidden). Two distilleries, one island, entirely different characters. At Eilean Iarmain, order the Té Bheag — a blended malt made exclusively for this hotel group.</p>
+          <div class="whisky-dram">
+            <strong>Tonight's Drams</strong>
+            Té Bheag at the Eilean Iarmain bar (unavailable commercially outside Skye) · At Kinloch Lodge, ask the sommelier to pour a Torabhaig alongside a Talisker 10 — the contrast tells the complete story of Skye whisky in two glasses.
+          </div>
+        </div>
+      </div>
+
+      <div class="wildlife-card">
+        <div class="wildlife-card-top">
+          <span style="font-size:18px">🦦</span>
+          <span class="wildlife-card-title">⭐ Otter &amp; Puffin Day</span>
+        </div>
+        <div class="wildlife-card-body">
+          <p><strong>Puffins (7:45am):</strong> Neist Point cliffs, south of lighthouse. Late April = arrival week. Look for birds flying in from the west.</p>
+          <div class="wildlife-highlight">Approach the cliff edge slowly and low — puffins are easily spooked. Best light is morning.</div>
+          <p style="margin-top:10px"><strong>Otters (dusk):</strong> Isle Ornsay harbour shoreline. Scan kelp beds at tide edges. Move quietly. Peak otter activity is the hour before dark.</p>
+          <div class="wildlife-highlight" style="margin-top:10px">The Kylerhea Otter Hide (30 min from Kinloch Lodge) offers near-guaranteed sightings — check April opening hours.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="secrets-section">
+    <div class="secrets-header">
+      <span class="secrets-header-icon">🔍</span>
+      <div class="secrets-header-text">
+        <div class="secrets-title">5 Things Locals Love · Tourists Miss</div>
+        <div class="secrets-sub">Skye: The South &amp; West</div>
+      </div>
+    </div>
+    <div class="secret-grid">
+      <div class="secret-item"><div class="secret-num">1</div><div><div class="secret-name">Torabhaig Distillery</div><p class="secret-desc">The most significant whisky story on Skye since Talisker opened in 1830. Tiny visitor numbers, passionately knowledgeable staff, extraordinary whisky in the most beautiful converted farmstead. Five minutes off the road south.</p></div></div>
+      <div class="secret-item"><div class="secret-num">2</div><div><div class="secret-name">Talisker Bay Beach</div><p class="secret-desc">The 20-minute walk from the distillery is known only to locals. Black sand, a sea waterfall, basalt columns, total isolation. 200+ daily distillery visitors drive straight on. Don't.</p></div></div>
+      <div class="secret-item"><div class="secret-num">3</div><div><div class="secret-name">Kylerhea Otter Hide</div><p class="secret-desc">A purpose-built volunteer-staffed otter hide above the tidal narrows at Kylerhea. The narrows create such productive feeding habitat that otters are almost guaranteed at certain tidal states. Run on a donation basis. Check April opening times.</p></div></div>
+      <div class="secret-item"><div class="secret-num">4</div><div><div class="secret-name">Té Bheag at Eilean Iarmain</div><p class="secret-desc">The hotel group's own privately blended malt. Not commercially distributed outside Skye. The bar is the only place in the world to drink it in its home. Order the Poit Dhubh 12-year-old.</p></div></div>
+      <div class="secret-item"><div class="secret-num">5</div><div><div class="secret-name">Museum of the Isles, Armadale</div><p class="secret-desc">Inside Armadale Castle — a scholarly museum covering the Lords of the Isles who ruled western Scotland as an independent kingdom for 200 years. Original clan documents and medieval artefacts. Almost never given proper time.</p></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ DAY 4 ═══════════════ -->
+<div class="day-section" id="day4">
+  <div class="day-header">
+    <div class="day-top">
+      <div>
+        <div class="day-num-label">Day Four · Monday 21 April</div>
+        <h2 class="day-title">Skye <em>→</em> Oban <em>→</em> Gleneagles</h2>
+        <p class="day-meta">Coastal A828 route · Castle Stalker · EE-USK langoustines · Arrive Gleneagles ~4pm</p>
+      </div>
+      <div class="day-badges">
+        <div class="badge">
+          <span class="badge-label">Drive</span>
+          <span class="badge-value">~4h</span>
+          <span class="badge-sub">~5h 30m elapsed</span>
+        </div>
+        <div class="badge">
+          <span class="badge-label">Route</span>
+          <span class="badge-value">A87→A828</span>
+          <span class="badge-sub">→A85→M9</span>
+        </div>
+      </div>
+    </div>
+    <div class="justification">
+      <div class="justification-label">Why this beats the tourist trail</div>
+      <p>Most visitors leave Skye via the bridge and drive directly to Edinburgh on the A82/M9. This route takes a completely different arc — south through Appin and Lorn on the A828 coastal road, past Castle Stalker, to Oban for Scotland's finest seafood lunch. The A828 hugs the sea lochs with views the inland route entirely misses. Arriving at Gleneagles in the late afternoon — exchanging island wildness for the ordered elegance of one of Scotland's greatest hotels — is one of the great transitions in British travel.</p>
+    </div>
+  </div>
+
+  <div class="day-body">
+    <div class="main-col">
+
+      <div class="time-block">
+        <div class="time-block-header">
+          <span class="time-icon">🍳</span>
+          <span class="time-title">8:30am — Kinloch Lodge Breakfast</span>
+        </div>
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-breakfast">☕ Breakfast · Depart 9:30am</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">Kinloch Lodge Breakfast</div>
+            <p class="food-desc">Kinloch Lodge's breakfast is as considered as its dinner. House-smoked salmon with scrambled eggs is outstanding; the full Scottish uses estate-sourced black pudding. Take your time — departure by 9:30am gives comfortable time for the Oban lunch.</p>
+          </div>
+          <div class="dishes-block">
+            <div class="dishes-label">Order These</div>
+            <div class="dishes">Smoked salmon with scrambled eggs on toasted sourdough · Full Scottish with estate black pudding · Kinloch porridge with Skye honey and cream · Strong coffee</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="time-block">
+        <div class="time-block-header">
+          <span class="time-icon">🏰</span>
+          <span class="time-title">~11:30am — Castle Stalker, Appin</span>
+        </div>
+        <div class="exp-card">
+          <div class="exp-chips"><span class="chip chip-star">⭐ Don't Miss · A828 Route</span></div>
+          <div class="exp-name">Castle Stalker</div>
+          <div class="exp-sub">A828 layby on LEFT · appears around a bend without warning</div>
+          <p class="exp-desc">A perfectly preserved 15th-century tower house on a tiny tidal island in Loch Laich — visible from the road as you round a corner. Pull over at the layby for 10 minutes. One of Scotland's most perfectly composed views: a lone tower reflected in a still sea loch, backed by mountains. Monty Python filmed The Holy Grail here.</p>
+        </div>
+      </div>
+
+      <div class="time-block">
+        <div class="time-block-header">
+          <span class="time-icon">🦞</span>
+          <span class="time-title">12:30pm — Oban</span>
+        </div>
+        <div class="exp-card">
+          <div class="exp-chips"><span class="chip chip-secret">🔍 Before Lunch</span></div>
+          <div class="exp-name">McCaig's Tower — 10 min walk up from town</div>
+          <div class="exp-sub">Victorian granite folly with 360° views</div>
+          <p class="exp-desc">Every tourist in Oban goes to the distillery. Almost none climb to McCaig's Tower. A 10-minute uphill walk from town gives views across Oban Bay to Kerrera and Mull. The view looking down the harbour from inside the unfinished tower is extraordinary. Always empty.</p>
+        </div>
+
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-lunch">🦞 Lunch (Primary) ⭐ · Pre-booked</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">EE-USK (Eeusk), North Pier</div>
+            <div class="food-location">North Pier, Oban · panoramic bay views · allow 90 min</div>
+            <p class="food-desc">One of Scotland's finest seafood restaurants. The glassed frontage looks directly across Oban Bay. Everything was alive this morning — the langoustines are a non-negotiable order.</p>
+          </div>
+          <div class="dishes-block">
+            <div class="dishes-label">Non-Negotiable Orders</div>
+            <div class="dishes"><strong>Whole West Coast langoustines with aioli</strong> (the essential dish) · Isle of Mull scallops with cauliflower and crispy capers · Halibut with lemon-caper brown butter · Ask for Oban 14-Year-Old whisky with the langoustines (distillery is 200m away)</div>
+          </div>
+          <div class="food-warning">Dram note: Oban 14 with langoustines is one of the great food-whisky pairings. Order it at the table.</div>
+        </div>
+
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-backup">🥗 Lunch (Backup)</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">The Waterfront Fishouse, Railway Pier</div>
+            <p class="food-desc">Excellent alternative if EE-USK is unavailable. Outstanding lobster bisque. Views equally good. Same Atlantic produce — it came out of the same sea this morning.</p>
+          </div>
+        </div>
+
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-dessert">🍮 Dessert — For the Road</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">Nories Bakehouse, George Street, Oban</div>
+            <p class="food-desc">The best bakery in Oban. Scottish empire biscuits, proper shortbread, Dundee cake. Buy a box for the drive to Gleneagles.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="time-block">
+        <div class="time-block-header">
+          <span class="time-icon">🏨</span>
+          <span class="time-title">4:00pm — Arrive Gleneagles</span>
+        </div>
+        <div class="exp-card">
+          <div class="exp-name">Gleneagles Hotel — Check In</div>
+          <p class="exp-desc">Ask for a room on the upper floors with Ochil Hills views. The estate in late April is magnificent — lambs in the parkland, bluebells in the woodland. Take 30 minutes to walk the estate before drinks. Ask the concierge about the estate ranger's red squirrel walk for tomorrow morning.</p>
+        </div>
+
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-dinner">🍽 Dinner — The Strathearn</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">The Strathearn Restaurant, Gleneagles</div>
+            <div class="food-location">Ground floor, Gleneagles Hotel · Smart dress</div>
+            <p class="food-desc">The grand main dining room. The Strathearn is formal, handsome, and genuinely excellent. Think of it as the warm-up act for tomorrow's Andrew Fairlie — it would headline at most other hotels.</p>
+          </div>
+          <div class="dishes-block">
+            <div class="dishes-label">Order These</div>
+            <div class="dishes">Scottish beef tartare with pickled shallots · Cullen Skink (elevated version with consommé twist) · Dry-aged Scottish sirloin with bone marrow butter · Scottish cheese board — ask specifically for Scottish cheeses only: Mull Cheddar, Lanark Blue, Anster from Fife</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /main-col -->
+
+    <div class="sidebar">
+      <div class="whisky-card">
+        <div class="whisky-card-top">
+          <span class="whisky-card-icon">🥃</span>
+          <span class="whisky-card-title">Whisky Thread · Day 4</span>
+        </div>
+        <div class="whisky-card-body">
+          <p>Today the trip pivots from island whiskies to the richer, nuttier character of Perthshire. Oban 14 with the langoustines is one of the great food-whisky pairings. At Gleneagles' bar, ask for their off-menu rare whisky list.</p>
+          <div class="whisky-dram">
+            <strong>Tonight's Drams</strong>
+            Oban 14-Year-Old with lunch · At Gleneagles bar, ask for Glenturret 10-Year-Old (Scotland's oldest working distillery — 20 min away) or a Blair Athol.
+          </div>
+        </div>
+      </div>
+
+      <div class="wildlife-card">
+        <div class="wildlife-card-top">
+          <span style="font-size:18px">🦭</span>
+          <span class="wildlife-card-title">Wildlife Watch</span>
+        </div>
+        <div class="wildlife-card-body">
+          <p><strong>Oban Bay:</strong> Common seals haul out on rocks of the Kerrera Sound — visible from EE-USK's window and the North Pier. <strong>Gleneagles estate:</strong> Red squirrels are resident — ask the concierge about the ranger-led morning walk tomorrow.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="secrets-section">
+    <div class="secrets-header">
+      <span class="secrets-header-icon">🔍</span>
+      <div class="secrets-header-text">
+        <div class="secrets-title">5 Things Locals Love · Tourists Miss</div>
+        <div class="secrets-sub">Oban, Appin &amp; Arriving at Gleneagles</div>
+      </div>
+    </div>
+    <div class="secret-grid">
+      <div class="secret-item"><div class="secret-num">1</div><div><div class="secret-name">Seafood Shack, Oban</div><p class="secret-desc">A tiny outdoor seafood stand near the ferry terminal — a converted horsebox run by a local fishing family. Lobster rolls, fresh crab claws, langoustines-in-a-cup. Michelin Bib Gourmand listed. A langoustine-in-a-cup for £5 may be the best value seafood in Scotland.</p></div></div>
+      <div class="secret-item"><div class="secret-num">2</div><div><div class="secret-name">McCaig's Tower (Not the Distillery)</div><p class="secret-desc">Every Oban visitor goes to the distillery. Very few climb to McCaig's Tower — 10 minutes up through Victorian terraces to a granite folly with 360-degree views. Almost always empty. Do both, but this first.</p></div></div>
+      <div class="secret-item"><div class="secret-num">3</div><div><div class="secret-name">Castle Stalker (A828 Pullout)</div><p class="secret-desc">The A828 is significantly more beautiful than the A82 as a route south from Skye. Castle Stalker appears around a bend with complete unexpectedness. The layby gives a perfect unobstructed view. Ten minutes, one photograph, both unforgettable.</p></div></div>
+      <div class="secret-item"><div class="secret-num">4</div><div><div class="secret-name">Glenturret Distillery, Crieff</div><p class="secret-desc">Scotland's oldest working distillery (established 1763), 20 minutes from Gleneagles. A tiny, intimate, genuinely old distillery beside a river. Their Michelin-starred Lalique Restaurant is the upgrade option for tomorrow's lunch.</p></div></div>
+      <div class="secret-item"><div class="secret-num">5</div><div><div class="secret-name">Gleneagles Estate Red Squirrel Walk</div><p class="secret-desc">Gleneagles employs a resident estate ranger. Ask the concierge at check-in to arrange the morning red squirrel walk — a genuinely extraordinary private wildlife experience almost no guests know to request.</p></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ DAY 5 ═══════════════ -->
+<div class="day-section" id="day5">
+  <div class="day-header">
+    <div class="day-top">
+      <div>
+        <div class="day-num-label">Day Five · Tuesday 22 April</div>
+        <h2 class="day-title">Gleneagles <em>—</em> Full Day</h2>
+        <p class="day-meta">The Retreat Spa · Drummond Castle Gardens · Afternoon Tea · Andrew Fairlie ⭐⭐</p>
+      </div>
+      <div class="day-badges">
+        <div class="badge">
+          <span class="badge-label">Drive</span>
+          <span class="badge-value">0</span>
+          <span class="badge-sub">1h if Drummond</span>
+        </div>
+        <div class="badge">
+          <span class="badge-label">Highlight</span>
+          <span class="badge-value">Andrew Fairlie</span>
+          <span class="badge-sub">⭐⭐ Michelin</span>
+        </div>
+      </div>
+    </div>
+    <div class="justification">
+      <div class="justification-label">Why this beats the tourist trail</div>
+      <p>Scotland's standard tourist itinerary treats Perthshire as a motorway corridor between the Highlands and Edinburgh. Staying two nights at Gleneagles and devoting a full day to it is one of the great luxuries this trip offers — a day of total decompression after four days of driving. The spa, the estate, and Andrew Fairlie form an unhurried triptych that no rushed itinerary can replicate. Andrew Fairlie is consistently ranked among the UK's three or four greatest restaurants. You're already in the same building.</p>
+    </div>
+  </div>
+
+  <div class="day-body">
+    <div class="main-col">
+
+      <div class="time-block">
+        <div class="time-block-header">
+          <span class="time-icon">🍳</span>
+          <span class="time-title">Morning — Breakfast &amp; Spa</span>
+        </div>
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-breakfast">☕ Breakfast · The Club Restaurant</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">Gleneagles Hotel Breakfast</div>
+            <p class="food-desc">The smoked salmon is from Loch Fyne, eggs from the estate's own hens, pastries baked before dawn. Take your time. The Bloody Mary is made with Gleneagles' own recipe and is exceptional.</p>
+          </div>
+          <div class="dishes-block">
+            <div class="dishes-label">Order These</div>
+            <div class="dishes">Smoked Loch Fyne salmon with poached eggs and hollandaise · Gleneagles granola with Perthshire raspberries · Freshly baked croissant with heather honey · A Bloody Mary (trust us)</div>
+          </div>
+        </div>
+        <div class="exp-card">
+          <div class="exp-chips"><span class="chip chip-book">📋 Book Months Ahead</span></div>
+          <div class="exp-name">The Retreat at Gleneagles — Couple's Treatment</div>
+          <div class="exp-sub">Pre-booked · essential</div>
+          <p class="exp-desc">One of the finest hotel spas in the UK. Book the "Highland Journey" treatment — it uses local botanicals and Highland heather in the oils. The thermal suite (steam room, ice fountain, herbal baths, heated loungers) is included with any treatment. Arrive 30 min early for the thermal circuit.</p>
+        </div>
+      </div>
+
+      <div class="time-block">
+        <div class="time-block-header">
+          <span class="time-icon">🌿</span>
+          <span class="time-title">Afternoon — Estate &amp; Perthshire</span>
+        </div>
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-lunch">🥗 Lunch — The American Bar</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">The American Bar, Gleneagles</div>
+            <div class="food-location">Casual estate lunch · excellent whisky bar</div>
+            <p class="food-desc">The hotel's informal bistro. The perfect antidote to the formality of tonight's dinner. Sit in the warm leather interior and have something excellent but relaxed.</p>
+          </div>
+          <div class="dishes-block">
+            <div class="dishes-label">Order These</div>
+            <div class="dishes">Smoked salmon club sandwich on toasted brioche · Gleneagles beef burger with Lanark Blue cheese · Warm Scotch egg with piccalilli · Scottish cheese board</div>
+          </div>
+        </div>
+
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-backup">🥗 Lunch (Upgrade Option) ⭐</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">The Lalique Restaurant, Glenturret Distillery</div>
+            <div class="food-location">Crieff · 20 min from Gleneagles · Michelin star · book ahead</div>
+            <p class="food-desc">If the spa doesn't take the whole morning: the Michelin-starred Lalique Restaurant at Scotland's oldest distillery is one of the great undiscovered Scottish lunch experiences.</p>
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-chips"><span class="chip chip-secret">🔍 Local Secret · 20 min away</span></div>
+          <div class="exp-name">⭐ Drummond Castle Gardens, Muthill</div>
+          <div class="exp-sub">B8062 · 20 min from Gleneagles · check April afternoon opening</div>
+          <p class="exp-desc">One of Scotland's most spectacular formal gardens — a vast terraced parterre in the shape of a St Andrew's Cross, with a 17th-century multi-faced sundial at its heart. Used as a filming location for Outlander. The view from the top terrace looking down the entire garden is one of the most dramatic horticultural views in Britain. Almost never recommended by Gleneagles concierges despite being extraordinary.</p>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-chips"><span class="chip chip-secret">🔍 Ask Concierge</span></div>
+          <div class="exp-name">Gleneagles Falconry Experience</div>
+          <p class="exp-desc">The hotel's resident falconer offers private sessions — an hour with Harris Hawks and a Scottish Eagle Owl, flying birds over the Perthshire landscape. Most guests don't know it exists. Limited daily availability. Ask the concierge to book at check-in.</p>
+        </div>
+      </div>
+
+      <div class="time-block">
+        <div class="time-block-header">
+          <span class="time-icon">🫖</span>
+          <span class="time-title">4:30pm — Afternoon Tea</span>
+        </div>
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-dessert">🫖 Afternoon Tea / Dessert</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">Gleneagles Afternoon Tea — The Drawing Room</div>
+            <div class="food-location">On the terrace if April weather allows</div>
+            <p class="food-desc">Scotland's finest afternoon tea. Warm scones with clotted cream and Scottish raspberry jam. Finger sandwiches include smoked salmon, cucumber with dill cream cheese, potted Inverawe trout. Scottish tablet, homemade shortbread, Dundee cake.</p>
+          </div>
+          <div class="food-warning">Andrew Fairlie is tonight. One scone maximum.</div>
+        </div>
+      </div>
+
+      <div class="time-block">
+        <div class="time-block-header">
+          <span class="time-icon">⭐</span>
+          <span class="time-title">Evening — Andrew Fairlie ⭐⭐</span>
+        </div>
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-dinner">🍽 Dinner · Two Michelin Stars</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">Restaurant Andrew Fairlie at Gleneagles</div>
+            <div class="food-location">Lower ground floor, Gleneagles Hotel · Dinner only · Smart dress required</div>
+            <p class="food-desc">Two Michelin stars. Consistently ranked one of the UK's greatest restaurants. The room has no windows — entirely focused on the table, the food, and each other. The team Andrew Fairlie built maintains extraordinary standards. The culinary centrepiece of the entire trip.</p>
+          </div>
+          <div class="dishes-block">
+            <div class="dishes-label">Legendary Dishes (Seasonal Menu)</div>
+            <div class="dishes"><strong>Home-smoked lobster with lime and herb butter</strong> — if on the menu, it is non-negotiable. Scotland's most celebrated dish · Hand-dived Orkney scallop with caviar · Loin of Perthshire roe deer with blackberry · Scottish beef with truffle · All-Scottish cheese course</div>
+          </div>
+          <div class="food-warning">Book immediately — fills months in advance. Tell the sommelier about your whisky journey on arrival; ask for a post-dinner whisky service.</div>
+        </div>
+      </div>
+
+    </div><!-- /main-col -->
+
+    <div class="sidebar">
+      <div class="whisky-card">
+        <div class="whisky-card-top">
+          <span class="whisky-card-icon">🥃</span>
+          <span class="whisky-card-title">Whisky Thread · Day 5</span>
+        </div>
+        <div class="whisky-card-body">
+          <p>This is the whisky apex of the trip. Consider the Glenturret "Whisky Ambassador" private blending session (book ahead) — Scotland's oldest distillery, an entirely personal experience. At Andrew Fairlie, the post-dinner whisky service is a masterclass.</p>
+          <div class="whisky-dram">
+            <strong>Tonight's Experience</strong>
+            Before dinner, ask Gleneagles bar for their off-menu rare list — they hold private cask expressions unavailable elsewhere. At Andrew Fairlie, tell the sommelier you've tracked whisky from Glencoe to Skye to Oban — ask them to complete the journey through Perthshire. This conversation will produce something extraordinary.
+          </div>
+        </div>
+      </div>
+
+      <div class="wildlife-card">
+        <div class="wildlife-card-top">
+          <span style="font-size:18px">🐿</span>
+          <span class="wildlife-card-title">Wildlife · Perthshire</span>
+        </div>
+        <div class="wildlife-card-body">
+          <p>The Gleneagles estate woodland has a resident red squirrel population. Ask the concierge to arrange the estate ranger's morning walk. Ospreys are present over Perthshire's lochs in April — just returned from Africa. Ask the ranger about current sightings.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="secrets-section">
+    <div class="secrets-header">
+      <span class="secrets-header-icon">🔍</span>
+      <div class="secrets-header-text">
+        <div class="secrets-title">5 Things Locals Love · Tourists Miss</div>
+        <div class="secrets-sub">Gleneagles &amp; Perthshire</div>
+      </div>
+    </div>
+    <div class="secret-grid">
+      <div class="secret-item"><div class="secret-num">1</div><div><div class="secret-name">Drummond Castle Gardens</div><p class="secret-desc">20 minutes from Gleneagles. One of Scotland's finest formal gardens in the shape of St Andrew's Cross. Used in Outlander filming. Almost never recommended by Gleneagles concierges. View from top terrace is extraordinary. Check afternoon opening hours.</p></div></div>
+      <div class="secret-item"><div class="secret-num">2</div><div><div class="secret-name">Muthill Village &amp; Ruined Church</div><p class="secret-desc">A preserved 18th-century Scottish village 15 minutes from Gleneagles, with a dramatically ruined Romanesque church tower. Cromwell's troops destroyed it in 1715. Barely visited, deeply atmospheric at evening. A 30-minute visit most hotel guests never make.</p></div></div>
+      <div class="secret-item"><div class="secret-num">3</div><div><div class="secret-name">Glenturret "Whisky Ambassador" Experience</div><p class="secret-desc">A 90-minute private blending session at Scotland's oldest distillery — creating your own blend from component whiskies with the distillery's archivist. One of the most personal whisky experiences in Scotland. Book ahead.</p></div></div>
+      <div class="secret-item"><div class="secret-num">4</div><div><div class="secret-name">Innerpeffray Library</div><p class="secret-desc">Scotland's oldest public library (1680) — 3,000 books from the 16th century onwards, 20 minutes from Gleneagles. The borrowing register goes back to 1747. A completely unique experience with an atmosphere unlike anywhere else in Scotland.</p></div></div>
+      <div class="secret-item"><div class="secret-num">5</div><div><div class="secret-name">The Gleneagles Falconry</div><p class="secret-desc">Private sessions flying Harris Hawks and a Scottish Eagle Owl in the Perthshire landscape. Almost no guests know to ask. The experience of an eagle returning to the glove with the Ochil Hills behind is genuinely extraordinary.</p></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ DAY 6 ═══════════════ -->
+<div class="day-section" id="day6">
+  <div class="day-header">
+    <div class="day-top">
+      <div>
+        <div class="day-num-label">Day Six · Wednesday 23 April</div>
+        <h2 class="day-title">Gleneagles <em>→</em> Edinburgh</h2>
+        <p class="day-meta">Arrive ~11:30am · Old Town · Café Royal oysters · The Bow Bar · Dishoom or Number One</p>
+      </div>
+      <div class="day-badges">
+        <div class="badge">
+          <span class="badge-label">Drive</span>
+          <span class="badge-value">1h 25m</span>
+          <span class="badge-sub">~2h elapsed</span>
+        </div>
+        <div class="badge">
+          <span class="badge-label">Route</span>
+          <span class="badge-value">A9→M9</span>
+          <span class="badge-sub">→Edinburgh</span>
+        </div>
+      </div>
+    </div>
+    <div class="justification">
+      <div class="justification-label">Why this beats the tourist trail</div>
+      <p>The standard itinerary arrives in Edinburgh on day one and crowds into the Castle, the Royal Mile and the tourist pubs. This plan arrives with five days of Scotland already in your bloodstream — the Old Town hits differently when you've slept in Glencoe. You arrive at lunchtime, unhurried, checking into one of Britain's great city hotels. The afternoon is entirely free. The evening offers Edinburgh's finest whisky bar and a dinner that is either the best curry outside India (Dishoom) or a Michelin-starred meal directly beneath your hotel room (Number One).</p>
+    </div>
+  </div>
+
+  <div class="day-body">
+    <div class="main-col">
+
+      <div class="time-block">
+        <div class="time-block-header">
+          <span class="time-icon">🍳</span>
+          <span class="time-title">Morning — Final Gleneagles Breakfast</span>
+        </div>
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-breakfast">☕ Breakfast · Depart 10:00am</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">Gleneagles Hotel — Last Morning</div>
+            <p class="food-desc">Don't rush it. Order something you haven't had yet.</p>
+          </div>
+          <div class="dishes-block">
+            <div class="dishes-label">Final Gleneagles Order</div>
+            <div class="dishes">Eggs Benedict with Gleneagles smoked salmon · Freshly squeezed blood orange juice · Warm pastry with Perthshire heather honey · Double espresso for the drive</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="time-block">
+        <div class="time-block-header">
+          <span class="time-icon">🏙</span>
+          <span class="time-title">11:30am — Edinburgh Arrival</span>
+        </div>
+        <div class="exp-card">
+          <div class="exp-name">The Balmoral Hotel — Check In</div>
+          <p class="exp-desc">The most iconic address in Edinburgh — the clock tower at the end of Princes Street, kept deliberately 3 minutes fast so Edinburghers don't miss their trains at Waverley below. Request a room with Castle or Princes Street Gardens view. Ask about the J.K. Rowling suite — Room 552, where she finished Harry Potter.</p>
+        </div>
+      </div>
+
+      <div class="time-block">
+        <div class="time-block-header">
+          <span class="time-icon">🦪</span>
+          <span class="time-title">12:30pm — Café Royal Lunch</span>
+        </div>
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-lunch">🥗 Lunch (Primary)</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">Café Royal Oyster Bar</div>
+            <div class="food-location">West Register Street · 5 min walk from The Balmoral · est. 1862</div>
+            <p class="food-desc">One of Edinburgh's most magnificent Victorian interiors — tiled portraits of Victorian inventors, gas-light fittings, mahogany bar, and stained glass. Not merely a restaurant; it's an experience of the city at its most itself. Order oysters and take your time.</p>
+          </div>
+          <div class="dishes-block">
+            <div class="dishes-label">Order These</div>
+            <div class="dishes">A dozen Loch Fyne oysters (this is the reason you came) · Dressed Cromer crab with brown bread · Smoked salmon blini · A glass of Chablis or champagne</div>
+          </div>
+        </div>
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-backup">🥗 Lunch (Backup)</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">The Dome Bar &amp; Restaurant, George Street</div>
+            <p class="food-desc">A former bank with a spectacular domed ceiling. Equally beautiful interior, equally good food. The Wednesday lunch is excellent.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="time-block">
+        <div class="time-block-header">
+          <span class="time-icon">🏛</span>
+          <span class="time-title">Afternoon — Edinburgh Old Town</span>
+        </div>
+        <div class="exp-card">
+          <div class="exp-name">Victoria Street → Grassmarket → Greyfriars Kirkyard</div>
+          <p class="exp-desc">Victoria Street: the curved cobbled street said to have inspired Diagon Alley. Walk down to the Grassmarket — one of Edinburgh's oldest market squares. In Greyfriars Kirkyard, go to the Covenanters' Prison at the back — where 1,200 prisoners were held in the open air in 1679. Moving and rarely visited.</p>
+        </div>
+        <div class="exp-card">
+          <div class="exp-chips"><span class="chip chip-secret">🔍 Local Secret</span></div>
+          <div class="exp-name">St Giles' Cathedral — The Thistle Chapel</div>
+          <div class="exp-sub">Royal Mile · 15 min · free · almost always empty</div>
+          <p class="exp-desc">Inside the cathedral, at the back: the Thistle Chapel, home of Scotland's most senior order of chivalry, completed in 1911. The carved wooden stalls are extraordinarily intricate. Find the angel playing bagpipes carved into the woodwork above — it's there, and almost nobody looks for it.</p>
+        </div>
+      </div>
+
+      <div class="time-block">
+        <div class="time-block-header">
+          <span class="time-icon">🥃</span>
+          <span class="time-title">6:00pm — The Bow Bar</span>
+        </div>
+        <div class="exp-card">
+          <div class="exp-chips"><span class="chip chip-star">⭐ The Whisky Journey's Conclusion</span></div>
+          <div class="exp-name">The Bow Bar, Victoria Street</div>
+          <div class="exp-sub">80 West Bow · ~400 single malts · pub prices · 1930s interior unchanged</div>
+          <p class="exp-desc">Scotland's finest traditional whisky bar. No cocktails, no food, no music. Staff who have read every whisky book ever published. Tell them where you've been this week — they will choose for you, and they will choose perfectly. Two drams. Then dinner.</p>
+          <p class="exp-tip">Ask for "something we won't have tasted from this trip" — they'll likely pour Springbank (Campbeltown) and an SMWS cask bottling. This is the journey's conclusion.</p>
+        </div>
+      </div>
+
+      <div class="time-block">
+        <div class="time-block-header">
+          <span class="time-icon">🌙</span>
+          <span class="time-title">Evening — Dinner</span>
+        </div>
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-dinner">🍽 Dinner (Primary) · Book Ahead</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">Dishoom Edinburgh</div>
+            <div class="food-location">St Andrew Square · 1940s Bombay café aesthetic</div>
+            <p class="food-desc">The obsessive recreation of a Bombay Irani café — ceiling fans, tobacco-yellow walls, extraordinary atmosphere. The food is equally extraordinary. The Black Dal (slow-cooked 24 hours) is one of the great dishes served anywhere in Britain.</p>
+          </div>
+          <div class="dishes-block">
+            <div class="dishes-label">Non-Negotiable Orders</div>
+            <div class="dishes"><strong>Black Dal</strong> (24-hour slow cook — this is why you came) · House Chicken Tikka · Grilled Mackerel with kokum butter · Masala chai to finish</div>
+          </div>
+        </div>
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-backup">🍽 Dinner (Backup Option 1) ⭐</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">Number One at The Balmoral</div>
+            <div class="food-location">Hotel basement · Michelin star · directly below your room</div>
+            <p class="food-desc">The Balmoral's Michelin-starred restaurant. Modern Scottish cuisine at its most elevated. The lobster bisque is one of Edinburgh's great dishes.</p>
+          </div>
+          <div class="dishes-block">
+            <div class="dishes-label">Order These</div>
+            <div class="dishes">Scottish lobster bisque with cognac cream · Orkney scallop with artichoke and caviar · Scottish beef fillet with bone marrow and truffle</div>
+          </div>
+        </div>
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-backup">🍽 Dinner (Backup Option 2)</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">The Witchery by the Castle</div>
+            <div class="food-location">Castlehill, top of the Royal Mile · Gothic luxury</div>
+            <p class="food-desc">Edinburgh's most theatrical restaurant. Candlelight, velvet, medieval stonework, one of Scotland's deepest wine lists. Food is very good; atmosphere is one of the most romantic in Scotland.</p>
+          </div>
+        </div>
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-dessert">🍮 Dessert</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">The Balmoral Drawing Room — Late Evening</div>
+            <p class="food-desc">Return to the hotel for dessert service. Ask for the Scottish tablet (their version of this fudge is extraordinary) and a nightcap whisky from the bar list.</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /main-col -->
+
+    <div class="sidebar">
+      <div class="whisky-card">
+        <div class="whisky-card-top">
+          <span class="whisky-card-icon">🥃</span>
+          <span class="whisky-card-title">Whisky Thread · Day 6</span>
+        </div>
+        <div class="whisky-card-body">
+          <p>The Bow Bar is the conclusion of the whisky journey. After six days of drinking whisky in context — in the glens, on the islands, at Michelin-starred tables — this is where the education ends and the conversation begins.</p>
+          <div class="whisky-dram">
+            <strong>The Final Session</strong>
+            At the Bow Bar: Springbank 15 (Campbeltown — Scotland's most unusual whisky region, briny, oily, magnificent) + a Scotch Malt Whisky Society bottling — blind-tasting a single cask without knowing the distillery. The perfect final dram.
+          </div>
+        </div>
+      </div>
+
+      <div class="wildlife-card">
+        <div class="wildlife-card-top">
+          <span style="font-size:18px">🦢</span>
+          <span class="wildlife-card-title">Wildlife · Edinburgh</span>
+        </div>
+        <div class="wildlife-card-body">
+          <p>Holyrood Park (5 min from The Balmoral) has feral goats on the Salisbury Crags, red kites overhead, and kestrels nesting in rock faces. St Margaret's Loch often has tufted duck and goldeneye in April.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="secrets-section">
+    <div class="secrets-header">
+      <span class="secrets-header-icon">🔍</span>
+      <div class="secrets-header-text">
+        <div class="secrets-title">5 Things Locals Love · Tourists Miss</div>
+        <div class="secrets-sub">Edinburgh</div>
+      </div>
+    </div>
+    <div class="secret-grid">
+      <div class="secret-item"><div class="secret-num">1</div><div><div class="secret-name">The Bow Bar (repeated for emphasis)</div><p class="secret-desc">Not a tourist whisky shop — a proper working local bar with 400 single malts. The staff choose better for you than you would for yourself. Go at 6pm, stay for two drams, tell them everything you've tasted this week. A great whisky experience for £12.</p></div></div>
+      <div class="secret-item"><div class="secret-num">2</div><div><div class="secret-name">The Thistle Chapel, St Giles'</div><p class="secret-desc">Inside St Giles' Cathedral, at the back — one of the most intricate carved wooden interiors in Scotland. Completed in 1911. The angel playing bagpipes above the stalls is carved into the woodwork. 15 minutes, free, empty.</p></div></div>
+      <div class="secret-item"><div class="secret-num">3</div><div><div class="secret-name">The Writers' Museum, Lady Stair's Close</div><p class="secret-desc">A 17th-century mansion off the Lawnmarket — free, always quiet. Dedicated to Burns, Scott, and Stevenson. The manuscripts, portraits, and personal effects are remarkable. In a city with many literary associations, this contains the most concentrated evidence.</p></div></div>
+      <div class="secret-item"><div class="secret-num">4</div><div><div class="secret-name">The SMWS Bottle Shop, Queen Street</div><p class="secret-desc">The Scotch Malt Whisky Society's bottle shop. Single casks bottled under code numbers — you never know the distillery until you taste. Staff will help you identify what you've been tasting blind all week. Perfect final whisky souvenir.</p></div></div>
+      <div class="secret-item"><div class="secret-num">5</div><div><div class="secret-name">Kay's Bar, Jamaica Street (New Town)</div><p class="secret-desc">Edinburgh's most perfectly preserved Victorian pub. Dark wood, gas-lit atmosphere, New Town lawyers and academics as regulars. Nothing changed in 50 years. The antithesis of every Royal Mile tourist pub.</p></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ DAY 7 ═══════════════ -->
+<div class="day-section" id="day7">
+  <div class="day-header">
+    <div class="day-top">
+      <div>
+        <div class="day-num-label">Day Seven · Thursday 24 April</div>
+        <h2 class="day-title">Edinburgh <em>→</em> Home</h2>
+        <p class="day-meta">Stockbridge breakfast · Morning · Whisky shopping · Ondine lunch · Depart 4:30pm · Flight 7:00pm</p>
+      </div>
+      <div class="day-badges">
+        <div class="badge">
+          <span class="badge-label">Drive</span>
+          <span class="badge-value">25 min</span>
+          <span class="badge-sub">EDI Airport</span>
+        </div>
+        <div class="badge">
+          <span class="badge-label">Depart</span>
+          <span class="badge-value">4:30pm</span>
+          <span class="badge-sub">Flight 7:00pm</span>
+        </div>
+      </div>
+    </div>
+    <div class="justification">
+      <div class="justification-label">Why this beats the tourist trail</div>
+      <p>Most final-morning itineraries cram the Castle, the Royal Mile, a quick lunch, and a taxi into a single breathless four-hour panic. This plan gives a focused, unhurried morning — one brilliant breakfast in Edinburgh's most beautiful neighbourhood, one clear activity choice, and a proper Scottish lunch before a relaxed departure. A bottle of whisky from Royal Mile Whiskies goes in the luggage and the flight home begins before you've stopped smiling.</p>
+    </div>
+  </div>
+
+  <div class="day-body">
+    <div class="main-col">
+
+      <div class="time-block">
+        <div class="time-block-header">
+          <span class="time-icon">☕</span>
+          <span class="time-title">8:30am — Stockbridge Breakfast</span>
+        </div>
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-breakfast">☕ Breakfast (Primary)</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">The Pantry, Stockbridge</div>
+            <div class="food-location">15 min walk from The Balmoral through the New Town · William Street</div>
+            <p class="food-desc">Edinburgh's finest neighbourhood breakfast café, in the city's most beautiful Georgian village. Warm, unhurried, genuinely exceptional food. The walk through the New Town to get here — Charlotte Square, Moray Place — is itself a pleasure. No tourists. All locals.</p>
+          </div>
+          <div class="dishes-block">
+            <div class="dishes-label">Order These</div>
+            <div class="dishes">Hot smoked salmon with poached eggs on sourdough · Full Scottish with house-made black pudding (the best in Edinburgh) · Ricotta hotcakes with Perthshire raspberries · Excellent filter coffee</div>
+          </div>
+        </div>
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-backup">☕ Breakfast (Backup)</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">The Balmoral Breakfast — In Room</div>
+            <p class="food-desc">If weather is foul or energy low: room service breakfast in bed looking at the Castle. Entirely justified for a final morning.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="time-block">
+        <div class="time-block-header">
+          <span class="time-icon">🏰</span>
+          <span class="time-title">10:00am — Choose One Activity</span>
+        </div>
+        <div class="exp-card">
+          <div class="exp-chips"><span class="chip chip-book">📋 Pre-book Timed Entry</span></div>
+          <div class="exp-name">Option A — Edinburgh Castle</div>
+          <div class="exp-sub">Opens 9:30am · allow 1.5–2 hours</div>
+          <p class="exp-desc">Pre-book timed entry — do not attempt walk-up in April (45+ min queues). Must-see inside: (1) the Scottish Crown Jewels — older than England's by a century, and the Stone of Destiny, returned to Scotland in 1996 after 700 years in London; (2) Mons Meg, the 15th-century siege cannon; (3) The view from the esplanade down Princes Street at 10am.</p>
+        </div>
+        <div class="exp-card">
+          <div class="exp-name">Option B — Old Town Deep Dive (No Queues)</div>
+          <p class="exp-desc">The Real Mary King's Close (pre-book — an underground medieval street sealed in the 1640s beneath the Royal Mile) + the Radical Road walk along the base of Salisbury Crags in Holyrood Park (30 min, extraordinary city views) + a final coffee at Brew Lab on South College Street (Edinburgh's finest independent café, entirely populated by locals).</p>
+        </div>
+      </div>
+
+      <div class="time-block">
+        <div class="time-block-header">
+          <span class="time-icon">🥃</span>
+          <span class="time-title">12:30pm — Whisky Shopping</span>
+        </div>
+        <div class="exp-card">
+          <div class="exp-chips"><span class="chip chip-star">⭐ Buy Two Bottles</span></div>
+          <div class="exp-name">Royal Mile Whiskies or Cadenhead's</div>
+          <div class="exp-sub">379 High St (Royal Mile Whiskies) · 172 Canongate (Cadenhead's)</div>
+          <p class="exp-desc">Two of Scotland's finest whisky shops. Royal Mile Whiskies is comprehensive; Cadenhead's (oldest independent bottler, est. 1842) is more specialist, selling single casks with no colouring or chill-filtration.</p>
+          <p class="exp-tip">Take home: Talisker 18 or Torabhaig Legacy (the Skye memory) + Springbank 10 (Campbeltown — what you drank at The Bow Bar, travels exceptionally well).</p>
+        </div>
+      </div>
+
+      <div class="time-block">
+        <div class="time-block-header">
+          <span class="time-icon">🦞</span>
+          <span class="time-title">1:30pm — Final Lunch</span>
+        </div>
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-lunch">🥗 Lunch (Primary) · Book Ahead</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">Ondine, George IV Bridge</div>
+            <div class="food-location">2 George IV Bridge · off the Royal Mile · Edinburgh's finest seafood lunch</div>
+            <p class="food-desc">A crustacean bar running the length of the room. Roy Brett's kitchen is obsessively local and seasonal. The crispy oysters with hot sauce are their signature. Book ahead.</p>
+          </div>
+          <div class="dishes-block">
+            <div class="dishes-label">Order These</div>
+            <div class="dishes">Scottish seafood platter for two (lobster · langoustine · crab · oysters · mussels) · Smoked haddock chowder · A glass of Muscadet · Cranachan one final time</div>
+          </div>
+        </div>
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-backup">🥗 Lunch (Backup)</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">The Gardener's Cottage, Royal Terrace Gardens</div>
+            <p class="food-desc">A tiny converted 1850s gardener's cottage. Communal tables, daily-changing seasonal menu, extraordinary atmosphere. Intimate, quiet, unlike anywhere else in Edinburgh. Book ahead.</p>
+          </div>
+        </div>
+        <div class="food-card">
+          <div class="food-card-header">
+            <div class="food-type food-type-dessert">🍮 Final Dessert &amp; Send-Off</div>
+          </div>
+          <div class="food-card-body">
+            <div class="food-name">Valvona &amp; Crolla, 19 Elm Row</div>
+            <div class="food-location">Edinburgh's beloved Italian deli · est. 1934 · family-run</div>
+            <p class="food-desc">Espresso and a cornetto at the café counter. Then buy a box of Scottish tablet (the finest fudge in Scotland) for the journey home.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="time-block">
+        <div class="time-block-header">
+          <span class="time-icon">✈️</span>
+          <span class="time-title">4:30pm — Depart for Airport</span>
+        </div>
+        <div class="exp-card">
+          <div class="exp-name">The Balmoral → EDI Airport · 25 minutes</div>
+          <p class="exp-desc">Book the airport car through the Balmoral concierge the evening before. Arrive airport by 5:00pm — comfortable for a 7pm flight. Security is typically 20–30 minutes at this time. Airside: The Caledonian Bar in departures has a decent whisky selection for one final dram before boarding.</p>
+        </div>
+      </div>
+
+    </div><!-- /main-col -->
+
+    <div class="sidebar">
+      <div class="whisky-card">
+        <div class="whisky-card-top">
+          <span class="whisky-card-icon">🥃</span>
+          <span class="whisky-card-title">Whisky Thread · Day 7</span>
+        </div>
+        <div class="whisky-card-body">
+          <p>The final chapter. The whisky story of this trip — Ben Nevis in Glencoe → Talisker on Skye → Torabhaig → Oban → Glenturret → Springbank at The Bow Bar — is a complete arc of Scotland's distilling geography.</p>
+          <div class="whisky-dram">
+            <strong>Take These Home</strong>
+            Talisker 18 or Torabhaig Legacy — the Skye memory · Springbank 10 — the Campbeltown discovery · Ben Nevis 10 — the memory of Glencoe and your first dram
+          </div>
+        </div>
+      </div>
+
+      <div class="wildlife-card">
+        <div class="wildlife-card-top">
+          <span style="font-size:18px">🦅</span>
+          <span class="wildlife-card-title">Final Wildlife Moment</span>
+        </div>
+        <div class="wildlife-card-body">
+          <p>The Radical Road walk along Salisbury Crags is excellent for kestrels and red kites. The Water of Leith from Stockbridge to Dean Village has grey herons, dippers, and kingfishers on the river. A kingfisher is a proper send-off.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="secrets-section">
+    <div class="secrets-header">
+      <span class="secrets-header-icon">🔍</span>
+      <div class="secrets-header-text">
+        <div class="secrets-title">5 Things Locals Love · Tourists Miss</div>
+        <div class="secrets-sub">Edinburgh — The Final Morning</div>
+      </div>
+    </div>
+    <div class="secret-grid">
+      <div class="secret-item"><div class="secret-num">1</div><div><div class="secret-name">Stockbridge &amp; The Pantry</div><p class="secret-desc">The best Georgian village neighbourhood in Edinburgh. Raeburn Place, the Water of Leith path, the Victorian market building — all within 15 min of The Balmoral. No tourists. All locals. The Pantry is Edinburgh's best neighbourhood café.</p></div></div>
+      <div class="secret-item"><div class="secret-num">2</div><div><div class="secret-name">The Radical Road, Holyrood Park</div><p class="secret-desc">A path cut into the base of Salisbury Crags in 1820 on Walter Scott's instruction. The geology is extraordinary — James Hutton used these rocks to develop his theory of geological time in 1788. Always nearly empty despite being 5 min from the Royal Mile.</p></div></div>
+      <div class="secret-item"><div class="secret-num">3</div><div><div class="secret-name">Cadenhead's Whisky Shop, Canongate</div><p class="secret-desc">Scotland's oldest independent bottler (est. 1842). They bottle directly from cask — no colouring, no chill-filtration. The "green label" range is exceptional value. Better than any airport whisky shop.</p></div></div>
+      <div class="secret-item"><div class="secret-num">4</div><div><div class="secret-name">The Real Mary King's Close</div><p class="secret-desc">An underground medieval street sealed in the 1640s beneath the Royal Mile. The original residents' belongings are still in the rooms. Genuinely extraordinary authenticity. Book ahead for timed entry.</p></div></div>
+      <div class="secret-item"><div class="secret-num">5</div><div><div class="secret-name">Brew Lab Coffee, South College Street</div><p class="secret-desc">Edinburgh's most serious independent coffee shop — directly off the Royal Mile but entirely populated by locals and university academics. The flat white is outstanding. A final coffee here before the airport is the perfect punctuation mark.</p></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ BOOKINGS ═══════════════ -->
+<div id="bookings" style="scroll-margin-top:80px;">
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px var(--pad-x);margin:40px 0;box-shadow:var(--shadow-md);">
+    <div class="booking-section-title">Booking Priority List</div>
+    <div class="booking-section-sub">Book in this order — the top items fill months in advance.</div>
+    <div class="booking-grid">
+      <div>
+        <div class="booking-category">
+          <div class="booking-cat-title">🚨 Critical — Book Immediately</div>
+          <div class="booking-item"><span class="b-name">Andrew Fairlie at Gleneagles <span class="urgent-flag">urgent</span></span><span class="b-date">Apr 22 dinner</span></div>
+          <div class="booking-item"><span class="b-name">Three Chimneys — request 7:30pm <span class="urgent-flag">urgent</span></span><span class="b-date">Apr 19 dinner</span></div>
+          <div class="booking-item"><span class="b-name">The House Over-By <span class="urgent-flag">urgent</span></span><span class="b-date">Apr 19 night</span></div>
+          <div class="booking-item"><span class="b-name">Gleneagles Hotel <span class="urgent-flag">urgent</span></span><span class="b-date">Apr 21–23 · 2 nights</span></div>
+          <div class="booking-item"><span class="b-name">The Balmoral Hotel <span class="urgent-flag">urgent</span></span><span class="b-date">Apr 23 night</span></div>
+          <div class="booking-item"><span class="b-name">Gleneagles Retreat Spa — couple's treatment</span><span class="b-date">Apr 22</span></div>
+        </div>
+        <div class="booking-category">
+          <div class="booking-cat-title">⚡ Book Soon — Weeks Ahead</div>
+          <div class="booking-item"><span class="b-name">Kinloch Lodge (hotel + dinner)</span><span class="b-date">Apr 20 night</span></div>
+          <div class="booking-item"><span class="b-name">Clachaig Inn or Glencoe House</span><span class="b-date">Apr 18 night</span></div>
+          <div class="booking-item"><span class="b-name">Talisker Distillery Tour</span><span class="b-date">Apr 20 · 10:30am</span></div>
+          <div class="booking-item"><span class="b-name">EE-USK, Oban</span><span class="b-date">Apr 21 · 12:30pm</span></div>
+          <div class="booking-item"><span class="b-name">Eilean Donan — pre-book online</span><span class="b-date">Apr 19</span></div>
+          <div class="booking-item"><span class="b-name">Edinburgh Castle — timed entry</span><span class="b-date">Apr 24 · 9:30am</span></div>
+          <div class="booking-item"><span class="b-name">Dishoom Edinburgh</span><span class="b-date">Apr 23 dinner</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="booking-category">
+          <div class="booking-cat-title">📋 Book When Confirmed</div>
+          <div class="booking-item"><span class="b-name">Car rental — full insurance incl. windscreen</span><span class="b-date">Apr 18</span></div>
+          <div class="booking-item"><span class="b-name">Gleneagles Falconry Experience</span><span class="b-date">Apr 22 afternoon</span></div>
+          <div class="booking-item"><span class="b-name">Glenturret Whisky Ambassador Experience</span><span class="b-date">Apr 22 morning</span></div>
+          <div class="booking-item"><span class="b-name">Real Mary King's Close</span><span class="b-date">Apr 24 morning</span></div>
+          <div class="booking-item"><span class="b-name">Ondine, Edinburgh</span><span class="b-date">Apr 24 lunch</span></div>
+          <div class="booking-item"><span class="b-name">Café Royal, Edinburgh</span><span class="b-date">Apr 23 lunch</span></div>
+          <div class="booking-item"><span class="b-name">Gardener's Cottage (if Ondine full)</span><span class="b-date">Apr 24 lunch</span></div>
+          <div class="booking-item"><span class="b-name">Balmoral airport car</span><span class="b-date">Apr 24 · 4:30pm</span></div>
+        </div>
+        <div class="booking-category">
+          <div class="booking-cat-title">🦦 Wildlife Notes</div>
+          <div class="booking-item"><span class="b-name">Puffins: Neist Point, south of lighthouse</span><span class="b-date">Apr 20 · 7:45am</span></div>
+          <div class="booking-item"><span class="b-name">Otters: Isle Ornsay harbour</span><span class="b-date">Apr 20 · 1hr before dark</span></div>
+          <div class="booking-item"><span class="b-name">Kylerhea Otter Hide — check April hours</span><span class="b-date">Apr 20 afternoon</span></div>
+          <div class="booking-item"><span class="b-name">Red squirrels: Gleneagles ranger walk</span><span class="b-date">Apr 22 · ask concierge</span></div>
+          <div class="booking-item"><span class="b-name">Seals: Oban Bay from EE-USK window</span><span class="b-date">Apr 21 · lunch table view</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ DRIVING TABLE ═══════════════ -->
+<div id="driving" style="scroll-margin-top:80px;">
+  <div class="driving-section">
+    <div class="driving-section-title">Drive Times &amp; Route Summary</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Route</th>
+          <th>Pure Drive</th>
+          <th>Elapsed (w/ stops)</th>
+          <th>Key Stops</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Apr 18 Fri</strong></td>
+          <td>EDI Airport → Glencoe (A82)</td>
+          <td>2h 45m</td>
+          <td>~3h 45m</td>
+          <td>The Drovers Inn (Inverarnan) · Three Sisters viewpoint</td>
+        </tr>
+        <tr>
+          <td><strong>Apr 19 Sat</strong></td>
+          <td>Glencoe → Colbost via Glenfinnan, Eilean Donan, Skye Bridge</td>
+          <td>4h 15m</td>
+          <td>~7h</td>
+          <td>Glenfinnan 20m · Fort William coffee 15m · Dornie lunch 45m · Eilean Donan 45m</td>
+        </tr>
+        <tr>
+          <td><strong>Apr 20 Sun</strong></td>
+          <td>Colbost → Neist Point → Talisker → Broadford → Kinloch Lodge</td>
+          <td>~2h</td>
+          <td>~3h 30m</td>
+          <td>Neist Point 45m · Talisker Distillery 2h · Bay walk 30m · Torabhaig 30m</td>
+        </tr>
+        <tr>
+          <td><strong>Apr 21 Mon</strong></td>
+          <td>Kinloch Lodge → Oban (A828 coastal) → Gleneagles (A85/M9)</td>
+          <td>~4h</td>
+          <td>~5h 30m</td>
+          <td>Castle Stalker 10m · EE-USK lunch 90m · McCaig's Tower 20m · Oban Distillery 30m</td>
+        </tr>
+        <tr>
+          <td><strong>Apr 22 Tue</strong></td>
+          <td>Gleneagles — no driving required</td>
+          <td>0</td>
+          <td>—</td>
+          <td>Optional: Drummond Castle 20m each way · Glenturret 20m each way</td>
+        </tr>
+        <tr>
+          <td><strong>Apr 23 Wed</strong></td>
+          <td>Gleneagles → The Balmoral, Edinburgh (M9/A9)</td>
+          <td>1h 25m</td>
+          <td>~2h</td>
+          <td>No stops required — comfortable mid-morning drive</td>
+        </tr>
+        <tr>
+          <td><strong>Apr 24 Thu</strong></td>
+          <td>The Balmoral → EDI Airport</td>
+          <td>25m</td>
+          <td>~25m</td>
+          <td>Depart 4:30pm for 7:00pm flight · Balmoral arranges car</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="issues-block">
+      <div class="issues-title">⚠ Open Issues — Action Required</div>
+      <p>
+        <strong>1. Oyster Shed (Apr 20 is Sunday)</strong> — Confirmed closed Sundays. Replaced with Café Sia, Broadford.<br>
+        <strong>2. Old Man of Storr / Kilt Rock</strong> — Not in current plan. If desired: add Apr 20 with 6:30am departure from Colbost, adding ~3h. Would require skipping Neist Point puffins or Talisker Bay walk.<br>
+        <strong>3. Portree</strong> — Not visited. Could add 45-min stop on drive south Apr 20, but adds to an already full day.<br>
+        <strong>4. Eilean Donan Saturday hours</strong> — Typically 10am–5pm April. Confirm: +44 1599 555202.<br>
+        <strong>5. Three Chimneys sitting time</strong> — Request 7:30pm or 8:00pm sitting explicitly when booking. Confirm at time of reservation.
+      </p>
+    </div>
+  </div>
+</div>
+
+</div><!-- /page-body -->
+
+<footer>
+  SCOTLAND · APRIL 2025 &nbsp;·&nbsp; GLENCOE · SKYE · GLENEAGLES · EDINBURGH &nbsp;·&nbsp; PRIVATE ITINERARY
+</footer>
+
+</body>
+</html>
