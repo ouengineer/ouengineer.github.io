@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wild Scotland — April 2025</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --forest:      #1a4231;
+  --forest-mid:  #2a6048;
+  --forest-pale: #eef5f1;
+  --gold:        #b8872a;
+  --gold-light:  #f5e6c8;
+  --ink:         #111827;
+  --text:        #374151;
+  --muted:       #6b7280;
+  --border:      #e5e7eb;
+  --bg:          #f9fafb;
+  --white:       #ffffff;
+  --red:         #b91c1c;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── HERO ── */
+.hero {
+  background: var(--forest);
+  padding: 64px 24px 56px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 20%, rgba(184,135,42,0.15), transparent 65%),
+              radial-gradient(ellipse 100% 80% at 50% 110%, rgba(0,0,0,0.25), transparent 65%);
+  pointer-events: none;
+}
+.hero-inner { position: relative; max-width: 680px; margin: 0 auto; }
+
+.hero-eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #88b8a0;
+  margin-bottom: 16px;
+}
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(52px, 11vw, 96px);
+  font-weight: 700;
+  line-height: 0.95;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+.hero h1 em { font-style: italic; color: #f0c96a; }
+.hero-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(18px, 3.5vw, 24px);
+  color: rgba(255,255,255,0.72);
+  margin: 14px 0 28px;
+  font-weight: 400;
+}
+.hero-dates {
+  display: inline-block;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: rgba(255,255,255,0.80);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  padding: 7px 18px;
+  border-radius: 24px;
+  margin-bottom: 28px;
+}
+.hero-tags {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.hero-tags span {
+  background: rgba(255,255,255,0.09);
+  border: 1px solid rgba(255,255,255,0.16);
+  color: rgba(255,255,255,0.80);
+  font-size: 11.5px;
+  font-weight: 500;
+  padding: 5px 13px;
+  border-radius: 20px;
+  letter-spacing: 0.03em;
+}
+
+/* ── STATS BAR ── */
+.stats-bar {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 0 16px;
+}
+.stats-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  gap: 0;
+}
+.stats-inner::-webkit-scrollbar { display: none; }
+.stat {
+  flex-shrink: 0;
+  padding: 14px 20px;
+  text-align: center;
+  border-right: 1px solid var(--border);
+  min-width: 110px;
+}
+.stat:last-child { border-right: none; }
+.stat-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 3px;
+}
+.stat-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--forest);
+  line-height: 1.2;
+}
+
+/* ── MAIN WRAP ── */
+.main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 40px 16px 64px;
+}
+
+/* ── SECTION TITLE ── */
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── DAY CARD ── */
+.day-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  transition: box-shadow 0.2s;
+}
+.day-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+
+/* Card header band */
+.card-band {
+  background: var(--forest);
+  padding: 16px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.card-band-left { display: flex; align-items: center; gap: 14px; }
+.day-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.22);
+  line-height: 1;
+  flex-shrink: 0;
+}
+.card-title-group {}
+.card-day-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #88b8a0;
+  margin-bottom: 3px;
+}
+.card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(18px, 3.5vw, 24px);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.1;
+}
+.card-title em { font-style: italic; color: #f0c96a; }
+.card-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.drive-badge {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.20);
+  border-radius: 8px;
+  padding: 6px 12px;
+  text-align: center;
+}
+.drive-badge-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  display: block;
+}
+.drive-badge-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #f0c96a;
+  display: block;
+  line-height: 1.2;
+}
+.drive-badge-sub {
+  font-size: 9.5px;
+  color: rgba(255,255,255,0.45);
+  display: block;
+}
+
+/* Card body */
+.card-body {
+  padding: 18px 22px 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+@media (min-width: 600px) {
+  .card-body { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 820px) {
+  .card-body { grid-template-columns: 2fr 1fr 1fr; }
+}
+
+/* Summary blurb */
+.day-summary {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.65;
+}
+.day-summary strong { color: var(--ink); font-weight: 600; }
+
+/* Locations list */
+.list-block {}
+.list-block-title {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--forest-mid);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.list-block-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--forest-pale);
+}
+.list-item {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--bg);
+  font-size: 13px;
+  line-height: 1.4;
+}
+.list-item:last-child { border-bottom: none; }
+.list-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--forest-mid);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.list-dot-gold { background: var(--gold); }
+.list-dot-red  { background: var(--red); }
+.list-name {
+  color: var(--ink);
+  font-weight: 500;
+}
+.list-detail {
+  color: var(--muted);
+  font-size: 11.5px;
+  display: block;
+  margin-top: 1px;
+}
+
+/* Meals row */
+.meals-row {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+.meal-pill {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 5px 11px 5px 8px;
+  font-size: 12px;
+  line-height: 1.3;
+}
+.meal-type {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 1px 6px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+.meal-type-b { background: #fef3c7; color: #92400e; }
+.meal-type-l { background: #d1fae5; color: #065f46; }
+.meal-type-d { background: #ede9fe; color: #5b21b6; }
+.meal-type-s { background: #fce7f3; color: #9d174d; }
+.meal-name {
+  color: var(--ink);
+  font-weight: 500;
+}
+.star { color: var(--gold); font-size: 11px; }
+
+/* ── OVERVIEW TABLE ── */
+.overview-table-wrap {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-top: 32px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+.overview-table-head {
+  background: var(--forest);
+  padding: 14px 22px;
+}
+.overview-table-head-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+}
+.overview-table-head-sub {
+  font-size: 12px;
+  color: rgba(255,255,255,0.55);
+  margin-top: 2px;
+}
+.ot {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  overflow-x: auto;
+  display: block;
+}
+@media (min-width: 600px) { .ot { display: table; } }
+.ot thead th {
+  background: var(--forest-pale);
+  color: var(--forest);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 9px 16px;
+  text-align: left;
+  border-bottom: 1px solid #c7ddd4;
+  white-space: nowrap;
+}
+.ot tbody td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+  color: var(--text);
+}
+.ot tbody tr:last-child td { border-bottom: none; }
+.ot tbody tr:hover td { background: var(--bg); }
+.ot-day { font-weight: 700; color: var(--ink); white-space: nowrap; }
+.ot-drive {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--forest);
+  white-space: nowrap;
+}
+.ot-elapsed { color: var(--muted); font-size: 11.5px; white-space: nowrap; }
+.ot-hotel { font-weight: 500; color: var(--ink); }
+.ot-hotel-sub { font-size: 11.5px; color: var(--muted); }
+
+/* ── BOOKING CALLOUT ── */
+.book-callout {
+  background: var(--forest);
+  border-radius: 14px;
+  padding: 26px 24px;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+@media (min-width: 620px) {
+  .book-callout { grid-template-columns: 1fr 1fr; }
+}
+.book-callout-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  grid-column: 1 / -1;
+  margin-bottom: -4px;
+}
+.book-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.book-flag {
+  flex-shrink: 0;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 2px 7px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  margin-top: 1px;
+}
+.book-flag-now  { background: #fca5a5; color: #7f1d1d; }
+.book-flag-soon { background: #fde68a; color: #78350f; }
+.book-item-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.90);
+  line-height: 1.4;
+}
+.book-item-date {
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.48);
+  display: block;
+}
+
+/* ── FOOTER ── */
+.page-footer {
+  background: var(--forest);
+  text-align: center;
+  padding: 22px 16px;
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.38);
+}
+
+@media print {
+  .day-card { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">A Private Journey · 7 Days</div>
+    <h1>Wild <em>Scotland</em></h1>
+    <p class="hero-sub">Seven days of food, drama, wilderness &amp; dram</p>
+    <div class="hero-dates">18 – 24 April 2025 &nbsp;·&nbsp; Glencoe &nbsp;·&nbsp; Skye &nbsp;·&nbsp; Gleneagles &nbsp;·&nbsp; Edinburgh</div>
+    <div class="hero-tags">
+      <span>🍽 Foodie</span>
+      <span>✨ Luxury</span>
+      <span>⛰ Dramatic Views</span>
+      <span>🦦 Wildlife</span>
+    </div>
+  </div>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat"><div class="stat-label">Total Miles</div><div class="stat-value">~730</div></div>
+    <div class="stat"><div class="stat-label">Hotels</div><div class="stat-value">5 Properties</div></div>
+    <div class="stat"><div class="stat-label">Michelin Stars</div><div class="stat-value">3 ★★★</div></div>
+    <div class="stat"><div class="stat-label">Distilleries</div><div class="stat-value">4 Visited</div></div>
+    <div class="stat"><div class="stat-label">Wildlife</div><div class="stat-value">Otter · Puffin</div></div>
+    <div class="stat"><div class="stat-label">Drams</div><div class="stat-value">10+ Curated</div></div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <div class="section-title">Day by Day</div>
+
+  <!-- ── DAY 1 ── -->
+  <div class="day-card">
+    <div class="card-band">
+      <div class="card-band-left">
+        <div class="day-num">1</div>
+        <div class="card-title-group">
+          <div class="card-day-label">Friday 18 April</div>
+          <div class="card-title">Edinburgh <em>→</em> Glencoe</div>
+        </div>
+      </div>
+      <div class="card-badges">
+        <div class="drive-badge">
+          <span class="drive-badge-label">Drive</span>
+          <span class="drive-badge-value">2h 45m</span>
+          <span class="drive-badge-sub">~3h 45m with stops</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="day-summary">
+        Rather than wasting the arrival evening in Edinburgh, the route heads immediately north on the <strong>A82 through Loch Lomond and Rannoch Moor</strong> — one of Britain's most dramatic roads — arriving in the Glencoe valley as the evening light turns the Three Sisters amber. Dinner and 300+ single malts await at the legendary Clachaig Inn, a stone's throw from where you'll sleep.
+      </div>
+      <div class="list-block">
+        <div class="list-block-title">Sites &amp; Stops</div>
+        <div class="list-item"><div class="list-dot"></div><div><span class="list-name">The Drovers Inn, Inverarnan</span><span class="list-detail">Lunch · Est. 1705 · A82 en route</span></div></div>
+        <div class="list-item"><div class="list-dot"></div><div><span class="list-name">Three Sisters Viewpoint</span><span class="list-detail">A82 layby · evening light</span></div></div>
+        <div class="list-item"><div class="list-dot"></div><div><span class="list-name">Glencoe Lochan Walk</span><span class="list-detail">30-min pre-dinner stroll</span></div></div>
+        <div class="list-item"><div class="list-dot list-dot-gold"></div><div><span class="list-name">Boots Bar, Clachaig Inn</span><span class="list-detail">300+ single malts · pub prices</span></div></div>
+      </div>
+      <div class="list-block">
+        <div class="list-block-title">Stay</div>
+        <div class="list-item"><div class="list-dot list-dot-gold"></div><div><span class="list-name">Clachaig Inn</span><span class="list-detail">Glencoe Valley</span></div></div>
+      </div>
+      <div class="meals-row">
+        <div class="meal-pill"><span class="meal-type meal-type-l">Lunch</span><span class="meal-name">The Drovers Inn</span></div>
+        <div class="meal-pill"><span class="meal-type meal-type-d">Dinner</span><span class="meal-name">Clachaig Inn Bidean Restaurant</span></div>
+        <div class="meal-pill"><span class="meal-type meal-type-s">Dessert</span><span class="meal-name">Cranachan</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DAY 2 ── -->
+  <div class="day-card">
+    <div class="card-band">
+      <div class="card-band-left">
+        <div class="day-num">2</div>
+        <div class="card-title-group">
+          <div class="card-day-label">Saturday 19 April</div>
+          <div class="card-title">Glencoe <em>→</em> Colbost, Skye</div>
+        </div>
+      </div>
+      <div class="card-badges">
+        <div class="drive-badge">
+          <span class="drive-badge-label">Drive</span>
+          <span class="drive-badge-value">4h 15m</span>
+          <span class="drive-badge-sub">~7h elapsed w/ stops</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="day-summary">
+        Scotland's greatest one-day drive: <strong>Glenfinnan Viaduct</strong> at 9:45am before the coaches arrive, a pub lunch in Dornie before visiting <strong>Eilean Donan Castle</strong>, across the Skye Bridge and through to Colbost in the west for dinner at <strong>Three Chimneys</strong> — one of Scotland's most celebrated restaurants, 60 seconds from your hotel room. The day is a crescendo, every hour more beautiful than the last.
+      </div>
+      <div class="list-block">
+        <div class="list-block-title">Sites &amp; Stops</div>
+        <div class="list-item"><div class="list-dot"></div><div><span class="list-name">Glenfinnan Viaduct &amp; Monument</span><span class="list-detail">Hill viewpoint + loch shore walk</span></div></div>
+        <div class="list-item"><div class="list-dot"></div><div><span class="list-name">Five Sisters of Kintail</span><span class="list-detail">A87 layby · 10-min stop</span></div></div>
+        <div class="list-item"><div class="list-dot"></div><div><span class="list-name">Eilean Donan Castle</span><span class="list-detail">45 min · walk the back shore path</span></div></div>
+        <div class="list-item"><div class="list-dot"></div><div><span class="list-name">Skye Bridge layby</span><span class="list-detail">2-min stop · landward side</span></div></div>
+      </div>
+      <div class="list-block">
+        <div class="list-block-title">Stay</div>
+        <div class="list-item"><div class="list-dot list-dot-gold"></div><div><span class="list-name">The House Over-By</span><span class="list-detail">Colbost, Skye</span></div></div>
+      </div>
+      <div class="meals-row">
+        <div class="meal-pill"><span class="meal-type meal-type-b">Breakfast</span><span class="meal-name">Full Scottish, Clachaig Inn</span></div>
+        <div class="meal-pill"><span class="meal-type meal-type-l">Lunch</span><span class="meal-name">The Clachan Inn, Dornie</span></div>
+        <div class="meal-pill"><span class="meal-type meal-type-d">Dinner</span><span class="meal-name">The Three Chimneys ⭐</span></div>
+        <div class="meal-pill"><span class="meal-type meal-type-s">Dessert</span><span class="meal-name">Hot Marmalade Pudding</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DAY 3 ── -->
+  <div class="day-card">
+    <div class="card-band">
+      <div class="card-band-left">
+        <div class="day-num">3</div>
+        <div class="card-title-group">
+          <div class="card-day-label">Sunday 20 April</div>
+          <div class="card-title">Colbost <em>→</em> Kinloch Lodge, Sleat</div>
+        </div>
+      </div>
+      <div class="card-badges">
+        <div class="drive-badge">
+          <span class="drive-badge-label">Drive</span>
+          <span class="drive-badge-value">~2h</span>
+          <span class="drive-badge-sub">~3h 30m elapsed</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="day-summary">
+        The wildlife day. Dawn at <strong>Neist Point</strong> for puffins on their arrival week from the Atlantic, a tour of <strong>Talisker Distillery</strong> followed by a walk to the secret black-sand beach, a stop at <strong>Torabhaig</strong> — Skye's hidden second distillery — and an otter watch at dusk along the Isle Ornsay harbour before dinner at the Macdonalds' own estate lodge.
+      </div>
+      <div class="list-block">
+        <div class="list-block-title">Sites &amp; Stops</div>
+        <div class="list-item"><div class="list-dot list-dot-gold"></div><div><span class="list-name">Neist Point · Puffin Colony</span><span class="list-detail">7:45am · cliffs south of lighthouse</span></div></div>
+        <div class="list-item"><div class="list-dot list-dot-gold"></div><div><span class="list-name">Talisker Distillery + Bay Beach</span><span class="list-detail">10:30am tour · 20-min walk to beach</span></div></div>
+        <div class="list-item"><div class="list-dot list-dot-gold"></div><div><span class="list-name">Torabhaig Distillery, Teangue</span><span class="list-detail">First new Skye whisky in 190 yrs</span></div></div>
+        <div class="list-item"><div class="list-dot list-dot-gold"></div><div><span class="list-name">Isle Ornsay · Otter Watch</span><span class="list-detail">1 hour before dark · harbour shore</span></div></div>
+        <div class="list-item"><div class="list-dot"></div><div><span class="list-name">Point of Sleat Walk</span><span class="list-detail">4-mi round trip · otter habitat</span></div></div>
+      </div>
+      <div class="list-block">
+        <div class="list-block-title">Stay</div>
+        <div class="list-item"><div class="list-dot list-dot-gold"></div><div><span class="list-name">Kinloch Lodge</span><span class="list-detail">Sleat Peninsula, Skye</span></div></div>
+      </div>
+      <div class="meals-row">
+        <div class="meal-pill"><span class="meal-type meal-type-b">Breakfast</span><span class="meal-name">The House Over-By</span></div>
+        <div class="meal-pill"><span class="meal-type meal-type-l">Lunch</span><span class="meal-name">Café Sia, Broadford</span></div>
+        <div class="meal-pill"><span class="meal-type meal-type-d">Dinner</span><span class="meal-name">Kinloch Lodge Restaurant</span></div>
+        <div class="meal-pill"><span class="meal-type meal-type-s">Dessert</span><span class="meal-name">Clootie Dumpling</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DAY 4 ── -->
+  <div class="day-card">
+    <div class="card-band">
+      <div class="card-band-left">
+        <div class="day-num">4</div>
+        <div class="card-title-group">
+          <div class="card-day-label">Monday 21 April</div>
+          <div class="card-title">Skye <em>→</em> Oban <em>→</em> Gleneagles</div>
+        </div>
+      </div>
+      <div class="card-badges">
+        <div class="drive-badge">
+          <span class="drive-badge-label">Drive</span>
+          <span class="drive-badge-value">~4h</span>
+          <span class="drive-badge-sub">~5h 30m elapsed</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="day-summary">
+        The transition day: from island wildness to grand hotel luxury, via the coastal <strong>A828</strong> route — one of Scotland's most scenic roads — and a stop at the impossible <strong>Castle Stalker</strong> before arriving in Oban for whole West Coast langoustines at <strong>EE-USK</strong>. Arriving at Gleneagles in late afternoon feels like stepping from one world into another.
+      </div>
+      <div class="list-block">
+        <div class="list-block-title">Sites &amp; Stops</div>
+        <div class="list-item"><div class="list-dot list-dot-gold"></div><div><span class="list-name">Castle Stalker, Appin</span><span class="list-detail">A828 layby · 10-min stop</span></div></div>
+        <div class="list-item"><div class="list-dot"></div><div><span class="list-name">McCaig's Tower, Oban</span><span class="list-detail">10-min walk · 360° harbour views</span></div></div>
+        <div class="list-item"><div class="list-dot"></div><div><span class="list-name">Oban Distillery</span><span class="list-detail">Est. 1794 · shop or quick tour</span></div></div>
+        <div class="list-item"><div class="list-dot list-dot-gold"></div><div><span class="list-name">Gleneagles Estate Walk</span><span class="list-detail">Ask concierge about ranger walk</span></div></div>
+      </div>
+      <div class="list-block">
+        <div class="list-block-title">Stay</div>
+        <div class="list-item"><div class="list-dot list-dot-gold"></div><div><span class="list-name">Gleneagles Hotel</span><span class="list-detail">Auchterarder, Perthshire · 2 nights</span></div></div>
+      </div>
+      <div class="meals-row">
+        <div class="meal-pill"><span class="meal-type meal-type-b">Breakfast</span><span class="meal-name">Kinloch Lodge</span></div>
+        <div class="meal-pill"><span class="meal-type meal-type-l">Lunch</span><span class="meal-name">EE-USK, Oban ⭐ Langoustines</span></div>
+        <div class="meal-pill"><span class="meal-type meal-type-d">Dinner</span><span class="meal-name">The Strathearn, Gleneagles</span></div>
+        <div class="meal-pill"><span class="meal-type meal-type-s">Dessert</span><span class="meal-name">Nories Bakehouse (for the road)</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DAY 5 ── -->
+  <div class="day-card">
+    <div class="card-band">
+      <div class="card-band-left">
+        <div class="day-num">5</div>
+        <div class="card-title-group">
+          <div class="card-day-label">Tuesday 22 April</div>
+          <div class="card-title">Gleneagles <em>—</em> Full Day</div>
+        </div>
+      </div>
+      <div class="card-badges">
+        <div class="drive-badge">
+          <span class="drive-badge-label">Drive</span>
+          <span class="drive-badge-value">0</span>
+          <span class="drive-badge-sub">1h if Drummond Castle</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="day-summary">
+        A day of complete decompression: morning in <strong>The Retreat spa</strong> with a couple's Highland Journey treatment, an afternoon excursion to the extraordinary <strong>Drummond Castle Gardens</strong> (20 min away, almost no one goes), and the evening entirely devoted to <strong>Restaurant Andrew Fairlie</strong> — two Michelin stars, no windows, consistently ranked one of the UK's greatest restaurants. The trip's culinary centrepiece.
+      </div>
+      <div class="list-block">
+        <div class="list-block-title">Experiences</div>
+        <div class="list-item"><div class="list-dot list-dot-gold"></div><div><span class="list-name">The Retreat at Gleneagles</span><span class="list-detail">Couple's spa treatment · book ahead</span></div></div>
+        <div class="list-item"><div class="list-dot list-dot-gold"></div><div><span class="list-name">Drummond Castle Gardens</span><span class="list-detail">20 min · Outlander filming location</span></div></div>
+        <div class="list-item"><div class="list-dot"></div><div><span class="list-name">Gleneagles Falconry</span><span class="list-detail">Harris Hawks &amp; Eagle Owl · ask concierge</span></div></div>
+        <div class="list-item"><div class="list-dot"></div><div><span class="list-name">Red Squirrel Ranger Walk</span><span class="list-detail">Estate woodland · ask concierge</span></div></div>
+      </div>
+      <div class="list-block">
+        <div class="list-block-title">Stay</div>
+        <div class="list-item"><div class="list-dot list-dot-gold"></div><div><span class="list-name">Gleneagles Hotel</span><span class="list-detail">Night 2 of 2</span></div></div>
+      </div>
+      <div class="meals-row">
+        <div class="meal-pill"><span class="meal-type meal-type-b">Breakfast</span><span class="meal-name">Gleneagles Hotel</span></div>
+        <div class="meal-pill"><span class="meal-type meal-type-l">Lunch</span><span class="meal-name">The American Bar, Gleneagles</span></div>
+        <div class="meal-pill"><span class="meal-type meal-type-s">Tea</span><span class="meal-name">Afternoon Tea, The Drawing Room</span></div>
+        <div class="meal-pill"><span class="meal-type meal-type-d">Dinner</span><span class="meal-name">Andrew Fairlie ⭐⭐</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DAY 6 ── -->
+  <div class="day-card">
+    <div class="card-band">
+      <div class="card-band-left">
+        <div class="day-num">6</div>
+        <div class="card-title-group">
+          <div class="card-day-label">Wednesday 23 April</div>
+          <div class="card-title">Gleneagles <em>→</em> Edinburgh</div>
+        </div>
+      </div>
+      <div class="card-badges">
+        <div class="drive-badge">
+          <span class="drive-badge-label">Drive</span>
+          <span class="drive-badge-value">1h 25m</span>
+          <span class="drive-badge-sub">~2h elapsed</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="day-summary">
+        Arriving in Edinburgh with five days of Scotland already lived, the city hits completely differently — unhurried oysters at the <strong>Café Royal</strong>, the afternoon on foot through <strong>Victoria Street and the Old Town</strong>, and an unmissable session at <strong>The Bow Bar</strong> (400 single malts, pub prices, extraordinary staff) before dinner at Dishoom or the Michelin-starred Number One, directly below your room at The Balmoral.
+      </div>
+      <div class="list-block">
+        <div class="list-block-title">Sites &amp; Stops</div>
+        <div class="list-item"><div class="list-dot"></div><div><span class="list-name">Victoria Street &amp; Grassmarket</span><span class="list-detail">Rowling's Diagon Alley inspiration</span></div></div>
+        <div class="list-item"><div class="list-dot"></div><div><span class="list-name">Greyfriars Kirkyard</span><span class="list-detail">Covenanters' Prison at the back</span></div></div>
+        <div class="list-item"><div class="list-dot"></div><div><span class="list-name">St Giles' — Thistle Chapel</span><span class="list-detail">15 min · free · carved angel w/ bagpipes</span></div></div>
+        <div class="list-item"><div class="list-dot list-dot-gold"></div><div><span class="list-name">The Bow Bar, Victoria Street</span><span class="list-detail">6pm · 400+ malts · the journey's end</span></div></div>
+      </div>
+      <div class="list-block">
+        <div class="list-block-title">Stay</div>
+        <div class="list-item"><div class="list-dot list-dot-gold"></div><div><span class="list-name">The Balmoral Hotel</span><span class="list-detail">Princes Street, Edinburgh</span></div></div>
+      </div>
+      <div class="meals-row">
+        <div class="meal-pill"><span class="meal-type meal-type-b">Breakfast</span><span class="meal-name">Gleneagles Hotel</span></div>
+        <div class="meal-pill"><span class="meal-type meal-type-l">Lunch</span><span class="meal-name">Café Royal Oyster Bar</span></div>
+        <div class="meal-pill"><span class="meal-type meal-type-d">Dinner</span><span class="meal-name">Dishoom / Number One ⭐</span></div>
+        <div class="meal-pill"><span class="meal-type meal-type-s">Dessert</span><span class="meal-name">Balmoral Drawing Room</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DAY 7 ── -->
+  <div class="day-card">
+    <div class="card-band">
+      <div class="card-band-left">
+        <div class="day-num">7</div>
+        <div class="card-title-group">
+          <div class="card-day-label">Thursday 24 April</div>
+          <div class="card-title">Edinburgh <em>→</em> Home</div>
+        </div>
+      </div>
+      <div class="card-badges">
+        <div class="drive-badge">
+          <span class="drive-badge-label">Airport</span>
+          <span class="drive-badge-value">25 min</span>
+          <span class="drive-badge-sub">Depart 4:30pm · Flight 7pm</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="day-summary">
+        A final morning done properly: breakfast in the <strong>Stockbridge village</strong> neighbourhood (Edinburgh's best-kept local secret, 15 min walk from the hotel), a choice of Edinburgh Castle or the underground <strong>Mary King's Close</strong>, whisky shopping at <strong>Royal Mile Whiskies or Cadenhead's</strong>, and a last seafood lunch at Ondine before a relaxed departure to the airport.
+      </div>
+      <div class="list-block">
+        <div class="list-block-title">Sites &amp; Stops</div>
+        <div class="list-item"><div class="list-dot list-dot-gold"></div><div><span class="list-name">Stockbridge Village Walk</span><span class="list-detail">15 min from Balmoral · all locals</span></div></div>
+        <div class="list-item"><div class="list-dot"></div><div><span class="list-name">Edinburgh Castle or Mary King's Close</span><span class="list-detail">Pre-book timed entry for either</span></div></div>
+        <div class="list-item"><div class="list-dot list-dot-gold"></div><div><span class="list-name">Royal Mile Whiskies / Cadenhead's</span><span class="list-detail">Take home: Talisker 18 + Springbank 10</span></div></div>
+        <div class="list-item"><div class="list-dot"></div><div><span class="list-name">EDI Airport · Depart 4:30pm</span><span class="list-detail">Balmoral concierge arranges car</span></div></div>
+      </div>
+      <div class="list-block">
+        <div class="list-block-title">Stay</div>
+        <div class="list-item"><div class="list-dot list-dot-gold"></div><div><span class="list-name">The Balmoral Hotel</span><span class="list-detail">Check out by noon</span></div></div>
+      </div>
+      <div class="meals-row">
+        <div class="meal-pill"><span class="meal-type meal-type-b">Breakfast</span><span class="meal-name">The Pantry, Stockbridge</span></div>
+        <div class="meal-pill"><span class="meal-type meal-type-l">Lunch</span><span class="meal-name">Ondine, George IV Bridge</span></div>
+        <div class="meal-pill"><span class="meal-type meal-type-s">Coffee</span><span class="meal-name">Valvona &amp; Crolla send-off</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROUTE TABLE -->
+  <div class="overview-table-wrap">
+    <div class="overview-table-head">
+      <div class="overview-table-head-title">Route at a Glance</div>
+      <div class="overview-table-head-sub">Drive times, hotels &amp; key routes</div>
+    </div>
+    <table class="ot">
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Route</th>
+          <th>Drive</th>
+          <th>With Stops</th>
+          <th>Hotel</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="ot-day">Fri 18</td>
+          <td>EDI → Glencoe (A82)</td>
+          <td class="ot-drive">2h 45m</td>
+          <td class="ot-elapsed">~3h 45m</td>
+          <td><div class="ot-hotel">Clachaig Inn</div><div class="ot-hotel-sub">Glencoe Valley</div></td>
+        </tr>
+        <tr>
+          <td class="ot-day">Sat 19</td>
+          <td>Glencoe → Colbost via Glenfinnan &amp; Eilean Donan</td>
+          <td class="ot-drive">4h 15m</td>
+          <td class="ot-elapsed">~7h</td>
+          <td><div class="ot-hotel">The House Over-By</div><div class="ot-hotel-sub">Colbost, Skye</div></td>
+        </tr>
+        <tr>
+          <td class="ot-day">Sun 20</td>
+          <td>Colbost → Talisker → Broadford → Kinloch Lodge</td>
+          <td class="ot-drive">~2h</td>
+          <td class="ot-elapsed">~3h 30m</td>
+          <td><div class="ot-hotel">Kinloch Lodge</div><div class="ot-hotel-sub">Sleat, Skye</div></td>
+        </tr>
+        <tr>
+          <td class="ot-day">Mon 21</td>
+          <td>Skye → Oban (A828 coastal) → Gleneagles</td>
+          <td class="ot-drive">~4h</td>
+          <td class="ot-elapsed">~5h 30m</td>
+          <td><div class="ot-hotel">Gleneagles Hotel</div><div class="ot-hotel-sub">Auchterarder · 2 nights</div></td>
+        </tr>
+        <tr>
+          <td class="ot-day">Tue 22</td>
+          <td>Gleneagles — no driving required</td>
+          <td class="ot-drive">—</td>
+          <td class="ot-elapsed">—</td>
+          <td><div class="ot-hotel">Gleneagles Hotel</div><div class="ot-hotel-sub">Night 2 of 2</div></td>
+        </tr>
+        <tr>
+          <td class="ot-day">Wed 23</td>
+          <td>Gleneagles → The Balmoral, Edinburgh (M9)</td>
+          <td class="ot-drive">1h 25m</td>
+          <td class="ot-elapsed">~2h</td>
+          <td><div class="ot-hotel">The Balmoral</div><div class="ot-hotel-sub">Princes Street, Edinburgh</div></td>
+        </tr>
+        <tr>
+          <td class="ot-day">Thu 24</td>
+          <td>The Balmoral → EDI Airport · Depart 4:30pm</td>
+          <td class="ot-drive">25m</td>
+          <td class="ot-elapsed">25m</td>
+          <td><div class="ot-hotel">Flight 7:00pm</div><div class="ot-hotel-sub">Check out by noon</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- BOOKING CALLOUT -->
+  <div class="book-callout">
+    <div class="book-callout-title">Book These Immediately</div>
+    <div class="book-item">
+      <span class="book-flag book-flag-now">Now</span>
+      <div><div class="book-item-name">Restaurant Andrew Fairlie, Gleneagles</div><span class="book-item-date">Tue 22 Apr · fills months ahead</span></div>
+    </div>
+    <div class="book-item">
+      <span class="book-flag book-flag-now">Now</span>
+      <div><div class="book-item-name">Three Chimneys — request 7:30pm sitting</div><span class="book-item-date">Sat 19 Apr · fills months ahead</span></div>
+    </div>
+    <div class="book-item">
+      <span class="book-flag book-flag-now">Now</span>
+      <div><div class="book-item-name">Gleneagles Hotel · 2 nights</div><span class="book-item-date">Mon–Wed 21–23 Apr</span></div>
+    </div>
+    <div class="book-item">
+      <span class="book-flag book-flag-now">Now</span>
+      <div><div class="book-item-name">The Balmoral Hotel, Edinburgh</div><span class="book-item-date">Wed 23 Apr</span></div>
+    </div>
+    <div class="book-item">
+      <span class="book-flag book-flag-now">Now</span>
+      <div><div class="book-item-name">The House Over-By, Colbost</div><span class="book-item-date">Sat 19 Apr</span></div>
+    </div>
+    <div class="book-item">
+      <span class="book-flag book-flag-now">Now</span>
+      <div><div class="book-item-name">Gleneagles Retreat Spa · Couple's Treatment</div><span class="book-item-date">Tue 22 Apr</span></div>
+    </div>
+    <div class="book-item">
+      <span class="book-flag book-flag-soon">Soon</span>
+      <div><div class="book-item-name">Talisker Distillery Tour · 10:30am</div><span class="book-item-date">Sun 20 Apr</span></div>
+    </div>
+    <div class="book-item">
+      <span class="book-flag book-flag-soon">Soon</span>
+      <div><div class="book-item-name">EE-USK Oban · 12:30pm</div><span class="book-item-date">Mon 21 Apr</span></div>
+    </div>
+    <div class="book-item">
+      <span class="book-flag book-flag-soon">Soon</span>
+      <div><div class="book-item-name">Dishoom Edinburgh</div><span class="book-item-date">Wed 23 Apr dinner</span></div>
+    </div>
+    <div class="book-item">
+      <span class="book-flag book-flag-soon">Soon</span>
+      <div><div class="book-item-name">Edinburgh Castle · timed entry</div><span class="book-item-date">Thu 24 Apr · 9:30am</span></div>
+    </div>
+  </div>
+
+</div><!-- /main -->
+
+<div class="page-footer">
+  WILD SCOTLAND &nbsp;·&nbsp; 18–24 APRIL 2025 &nbsp;·&nbsp; GLENCOE · SKYE · GLENEAGLES · EDINBURGH
+</div>
+
+</body>
+</html>
